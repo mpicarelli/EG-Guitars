@@ -31,7 +31,7 @@ body{
 
 .todofondo{/*le da una capa gris traslucida asi no se nota mucho el fondo*/
     background-color: rgba(59, 59, 59, 0.5);
-    min-height: 80vh;
+    min-height: 75vh;
 }
 
 #arriba{
@@ -44,13 +44,14 @@ body .arriba{
     display: inline-block;
     color: ivory;
     text-decoration: none;
-    position: fixed;
+    position: absolute;
     bottom: 125px;
-    font-size: 2rem;
-    padding: 5px 10px;
+    font-size: 1.5rem;
+    line-height: 2rem;
+    padding: 5px 10px 10px 10px;
     background-color: rgba(109,109,109,0.65);
     margin-left: 20px;
-    border-radius: 20%;
+    border-radius: 15%;
 }
 
 .arriba:hover{
@@ -61,7 +62,7 @@ body .arriba{
 
 /*HEADER Y NAVEGACION*/
 
-.encabezado1{
+header{
     background-color: rgba(27, 27, 27, 0.9);
     border-bottom: 2px solid rgb(255, 255, 255);
     top: 0px;
@@ -145,7 +146,7 @@ height: 500px;
             padding: 1rem 0;
         }
         &:hover{text-decoration: none;}
-            h1, h3{
+            h1, h2{
                 font-size: 2rem;
                 font-weight: bold;
                 letter-spacing: 3px;
@@ -172,9 +173,9 @@ height: 500px;
         left: 0;
         right: 0;
         top: 0;
-        max-width: 95%;
+        max-width: 90%;
         margin: auto;
-        a, p{
+        h3, p{
             background-color: $bg-cartel;
             color: $color-texto;
             padding: 1rem;
@@ -186,7 +187,13 @@ height: 500px;
             font-weight: 700;
             text-transform: uppercase;
             margin-bottom: 10px;
-            &:hover{background-color: lighten($bg-cartel, 20);}
+        }
+        &:hover{
+            text-decoration: none;
+            h3,p{
+                color: $titulo-blanco;
+                transform: scale(1.1);
+            }
         }
     }
 }

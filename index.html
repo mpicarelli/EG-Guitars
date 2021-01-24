@@ -15,19 +15,19 @@
 </head>
 <body>
 	<article id="arriba"></article>
-	<header class="encabezado1">
+	<header>
 		<div class="container">
 			<nav class="navbar navbar-expand-md navbar-dark bg-none">
-				<a class="navbar-brand d-md-none flex-grow-1 d-flex justify-content-center" href="index.html">
+				<a class="navbar-brand d-md-none d-flex flex-grow-1 justify-content-center" href="index.html">
 					<img src="imagenes/LogoGris.png" alt="logo EG GUITARS" width="170">
 				</a>
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navegacion" aria-controls="navegacion" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon"></span>
 				</button>
 				<div class="collapse navbar-collapse" id="navegacion">
-					<ul class="navbar-nav m-auto align-items-center w-100 justify-content-around ">
+					<ul class="navbar-nav w-100 align-items-center justify-content-around">
 						<li class="nav-item flex-grow-1 text-center">
-							<a class="nav-link active" href="index.html">INICIO</a>
+							<a class="nav-link active" href="index.html">inicio</a>
 						</li>
 						<li class="nav-item dropdown bg-none flex-grow-1 text-center">
 							<span class="navbar-text w-100" id="DropdownTaller" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">EL TALLER</span>
@@ -56,14 +56,14 @@
 			</nav>
 		</div>
 	</header>
-	<div class="todofondo">
+	<main class="todofondo">
 		<div class="container">
 			<section class="slider-ppal">
 				<div id="CarouselPpal" class="carousel slide carousel-fade" data-ride="carousel">
 					<div class="carousel-inner">
 						<div class="carousel-item active">
 							<div class="carousel-img">
-								<img src="imagenes/carousel/rosie-mate1.jpeg" class="d-block w-100" alt="...">
+								<img src="imagenes/carousel/rosie-mate1.jpeg" class="d-block w-100" alt="fondo con guitarra en proceso de construccion">
 							</div>
 							<div class="carousel-caption h-100 w-100 d-flex flex-column justify-content-center">
 								<div class="d-flex flex-column justify-content-center">
@@ -79,7 +79,7 @@
 							</a>
 							<a href="servicios.html" class="carousel-caption h-100 w-100 d-flex flex-column justify-content-center">
 								<div class="d-flex flex-column justify-content-center">
-									<h3>Servicios</h3>
+									<h2>Servicios</h2>
 									<p>Desde calibracion y mantenimiento periodico hasta toda clase de reparaciones y personalizaciones</p>
 								</div>
 							</a>
@@ -91,7 +91,7 @@
 							</a>
 							<a href="showroom.html" class="carousel-caption h-100 w-100 d-flex flex-column justify-content-center">
 								<div class="d-flex flex-column justify-content-center">
-									<h3>Modelos</h3>
+									<h2>Modelos</h2>
 									<p>Entra y conoce todos los modelos de guitarras y bajos construidos</p>
 								</div>
 							</a>
@@ -103,7 +103,7 @@
 							</a>
 						<a href="mics.html" class="carousel-caption h-100 w-100 d-flex flex-column justify-content-center">
 							<div class="d-flex flex-column justify-content-center">
-								<h3>EG PICKUPS</h3>
+								<h2>EG PICKUPS</h2>
 								<p>Los microfonos EG-PICKUPS estan realizados con los mismos materiales de las grandes marcas para que obtengas el sonido  que deseas</p>
 							</div>
 						</a>
@@ -119,9 +119,8 @@
 					</a>
 				</div>
 			</section>
-			<div class="row m-0">	
+			<section class="row m-0">	
 				<article class=" testimonios col-12 col-md-6">
-					<h2 class="clientes d-none">Clientes y sus opiniones</h2>
 					<div id="CarouselReviews" class="carousel slide carousel-fade h-100 d-flex align-items-center" data-ride="carousel">
 						<div class="carousel-inner">
 							<div class="carousel-item active">
@@ -138,22 +137,20 @@
 				</article>
 				<article class="servicios col-12 col-md-6 p-0">
 					<img class="w-100 h-100" src="imagenes/reentrastado.jpg">
-					<div class="servicios-texto d-flex flex-column justify-content-center align-items-center">
-						<a class="d-block" href="servicios.html">Servicios</a>
-						<p class="d-block">Calibracion, electronica, reparaciones, personalizado y mas</p>
-					</div>
+					<a href="servicios.html" class="servicios-texto d-flex flex-column justify-content-center align-items-center">
+						<h3 class="d-block">Servicios</h3>
+						<p class="d-block text-center">Calibracion, electronica, reparaciones, personalizado y mas</p>
+					</a>
 				</article>
-			</div>
+			</section>
 			<article class="videohome">
 				<iframe  src="https://www.youtube.com/embed/iN4Ldqm8hIs" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 			</article>
 		</div>
-	</div>
-	<!-- va comentado hasta que resuelva como hacer que aparezca y desaparezca
+	</main>
 	<a class="arriba wow animate__animated animate__fadeInLeft" href="#arriba">
 		<i class="fas fa-chevron-up"></i>
 	</a>		
-	-->
 	<footer class="w-100 py-3">
 		<div class="container justify-content-around">
 			<div class="row">

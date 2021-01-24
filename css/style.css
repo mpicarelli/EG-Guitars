@@ -7182,7 +7182,7 @@ body {
 .todofondo {
   /*le da una capa gris traslucida asi no se nota mucho el fondo*/
   background-color: rgba(59, 59, 59, 0.5);
-  min-height: 80vh; }
+  min-height: 75vh; }
 
 #arriba {
   position: absolute;
@@ -7192,20 +7192,21 @@ body .arriba {
   display: inline-block;
   color: ivory;
   text-decoration: none;
-  position: fixed;
+  position: absolute;
   bottom: 125px;
-  font-size: 2rem;
-  padding: 5px 10px;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  padding: 5px 10px 10px 10px;
   background-color: rgba(109, 109, 109, 0.65);
   margin-left: 20px;
-  border-radius: 20%; }
+  border-radius: 15%; }
 
 .arriba:hover {
   opacity: 1;
   background-color: #6d6d6d; }
 
 /*HEADER Y NAVEGACION*/
-.encabezado1 {
+header {
   background-color: rgba(27, 27, 27, 0.9);
   border-bottom: 2px solid white;
   top: 0px;
@@ -7213,28 +7214,28 @@ body .arriba {
   right: 0;
   position: sticky;
   z-index: 10; }
-  .encabezado1 .navbar-dark .navbar-nav .nav-link:hover, .encabezado1 .navbar-text:hover {
+  header .navbar-dark .navbar-nav .nav-link:hover, header .navbar-text:hover {
     color: white;
     transform: scale(1.1); }
-  .encabezado1 .dropdown-menu.midropmenu {
+  header .dropdown-menu.midropmenu {
     background-color: rgba(27, 27, 27, 0.9);
     border-top: 4px solid white; }
-  .encabezado1 .dropdown-item.midropitem {
+  header .dropdown-item.midropitem {
     font-size: 1.35rem;
     color: #979797;
     font-weight: bold; }
-  .encabezado1 .dropdown-item.midropitem:hover {
+  header .dropdown-item.midropitem:hover {
     color: white;
     transform: scale(1.1);
     background-color: transparent; }
-  .encabezado1 nav ul li a, .encabezado1 nav ul li span {
+  header nav ul li a, header nav ul li span {
     text-decoration: none;
     text-transform: uppercase;
     font-size: 1.35rem;
     color: #979797;
     cursor: pointer;
     font-weight: bold; }
-  .encabezado1 header nav .navbar-text.active {
+  header header nav .navbar-text.active {
     color: white; }
 
 /*INDEX*/
@@ -7277,7 +7278,7 @@ body .arriba {
       padding: 1rem 0; }
     .slider-ppal #CarouselPpal .carousel-caption:hover {
       text-decoration: none; }
-    .slider-ppal #CarouselPpal .carousel-caption h1, .slider-ppal #CarouselPpal .carousel-caption h3 {
+    .slider-ppal #CarouselPpal .carousel-caption h1, .slider-ppal #CarouselPpal .carousel-caption h2 {
       font-size: 2rem;
       font-weight: bold;
       letter-spacing: 3px;
@@ -7300,9 +7301,9 @@ body .arriba {
     left: 0;
     right: 0;
     top: 0;
-    max-width: 95%;
+    max-width: 90%;
     margin: auto; }
-    .testimonios .servicios-texto a, .testimonios .servicios-texto p, .servicios .servicios-texto a, .servicios .servicios-texto p {
+    .testimonios .servicios-texto h3, .testimonios .servicios-texto p, .servicios .servicios-texto h3, .servicios .servicios-texto p {
       background-color: rgba(27, 27, 27, 0.7);
       color: #c4c4c4;
       padding: 1rem;
@@ -7313,8 +7314,11 @@ body .arriba {
       font-weight: 700;
       text-transform: uppercase;
       margin-bottom: 10px; }
-      .testimonios .servicios-texto a:hover, .servicios .servicios-texto a:hover {
-        background-color: rgba(78, 78, 78, 0.7); }
+    .testimonios .servicios-texto:hover, .servicios .servicios-texto:hover {
+      text-decoration: none; }
+      .testimonios .servicios-texto:hover h3, .testimonios .servicios-texto:hover p, .servicios .servicios-texto:hover h3, .servicios .servicios-texto:hover p {
+        color: ivory;
+        transform: scale(1.1); }
 
 .videohome {
   /*video al final del index*/
