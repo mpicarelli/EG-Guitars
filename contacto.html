@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>EG-Guitars | Contacto</title>
+		<meta name="keywords" content="INSTRUMENTOS MUSICALES, GUITARRAS, BAJOS, LUTHIER, CONTACTO, FORMULARIO DE CONTACTO">
+		<meta name="description" content="Por favor completa el siguiente formulario para hacernos saber tu consulta y que podamos contactarnos contigo">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+		<link rel="preconnect" href="https://fonts.gstatic.com">
+		<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;600;700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+		<link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+	</head>
+<body>
+	<article id="arriba"></article>
+	<header class="encabezado1">
+		<div class="container">
+			<nav class="navbar navbar-expand-md navbar-dark bg-none">
+				<a class="navbar-brand d-md-none flex-grow-1 d-flex justify-content-center" href="index.html">
+					<img src="LogoGris.png" alt="logo EG GUITARS" width="170">
+				</a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navegacion" aria-controls="navegacion" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navegacion">
+					<ul class="navbar-nav m-auto align-items-center w-100 justify-content-around ">
+						<li class="nav-item flex-grow-1 text-center">
+							<a class="nav-link" href="index.html">INICIO</a>
+						</li>
+						<li class="nav-item dropdown bg-none flex-grow-1 text-center">
+							<span class="navbar-text" id="DropdownTaller" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">EL TALLER</span>
+							<div class="dropdown-menu midropmenu" aria-labelledby="navbarDropdown">
+								<!--<a class="dropdown-item midropitem" href="taller-info.html">sobre el taller</a>-->
+								<a class="dropdown-item midropitem text-center" href="servicios.html">servicios</a>
+								<a class="dropdown-item midropitem text-center" href="mics.html">eg pickups</a>
+							</div>
+						</li>
+						<li class="nav-item d-md-block d-none">
+							<a class="nav-link px-2" href="index.html">
+								<img src="LogoGris.png" alt="logo EG GUITARS" width="150">
+							</a>
+						</li>
+						<li class="nav-item dropdown bg-none flex-grow-1 text-center">
+							<span class="navbar-text" id="DropdownTaller" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">INSTRUMENTOS</span>
+							<div class="dropdown-menu midropmenu" aria-labelledby="navbarDropdown">
+								<a class="dropdown-item midropitem text-center" href="showroom.html">modelos</a>
+								<a class="dropdown-item midropitem text-center" href="stock.html">en stock</a>
+							</div>
+						</li>
+						<li class="nav-item flex-grow-1 text-center">
+							<a class="nav-link active" href="contacto.html">CONTACTo</a>
+						</li>
+					</ul>
+				</div>
+			</nav>
+		</div>
+	</header>
+	<div class="todofondo">
+		<article class="container-flud p-0">
+			<div  class="titulos-secciones">
+				<div class="container">
+					<h1 class="mb-0">contacto</h1>
+				</div>
+			</div>
+		</article>
+		<div class="container py-5">
+			<section>
+				<article class="formulario ">
+					<div class="formulario-texto text-center p-5">
+						<P>Gracias por interesarte en el taller y nuestros productos.</P>
+						<p>Por favor completa el siguiente formulario para hacernos saber tu consulta y que podamos contactarnos contigo</p>
+					</div>
+					<div class="text-center p-3">
+						<form action="" method="POST">
+							<div class="form-input w-100 px-2 mb-2">
+								<input class="w-100 h-100" placeholder="Nombre y apellido(*)" id="nombrecompleto" name="nombrecompleto" type="text" required maxlength="50">
+							</div>
+							<div class="form-input w-100 px-2 mb-2">
+								<input class="w-100 h-100" name="email" id="email" type="email" placeholder="Email(*)" required>
+							</div>
+							<div class="form-input w-100 px-2 mb-2">
+								<select class="w-100 h-100" name="tema" id="tema" required>
+									<option value="1">tema de tu consulta</option>
+									<option value="2">Calibracion y mantenimiento</option>
+									<option value="3">pintura y personalizaciones</option>
+									<option value="4">Reparaciones y restauraciones</option>
+									<option value="5">Guitarras y bajos</option>
+									<option value="6">Microfonos</option>
+									<option value="7">Otro</option>
+								</select>
+							</div>
+							<div class="w-100 px-2 mb-2">
+								<textarea class="w-100" name="comentarios" id="comentarios" cols="30" rows="10"></textarea>
+							</div>
+							<div>
+								<button class="boton" type="submit" name="enviar">enviar</button>
+							</div>
+						</form>
+					</div>
+				</article>
+			</section>
+		</div>
+	</div>
+	<!-- va comentado hasta que resuelva como hacer que aparezca y desaparezca
+	<a class="arriba wow animate__animated animate__fadeInLeft" href="#arriba">
+		<i class="fas fa-chevron-up"></i>
+	</a>		
+	-->
+	<footer class="w-100 py-3">
+		<div class="container justify-content-around">
+			<div class="row">
+				<div class="col-12 col-sm-4 text-center px-0">
+					<h3 class="my-0 py-2">Emanuel Gianne Luthier &copy;</h3>
+				</div>
+				<div class="col-12 col-sm-4 text-center logos px-0">
+					<a href="https://www.instagram.com/emanuelgianne/">
+						<i class="fab fa-instagram insta my-0"></i>
+					</a>
+					<a href="https://www.facebook.com/EGGuitars">
+						<i class="fab fa-facebook-square face my-0"></i>
+					</a>
+					<a href=https://www.youtube.com/channel/UC7dLs4mcvoUzqrL0ClpuB-Q/videos>
+						<i class="fab fa-youtube yt my-0"></i>
+					</a>
+				</div>
+				<div class="col-12 col-sm-4 text-center px-0"> 
+					<p class="my-0">Developed by:<span>GüEV</span></p>
+				</div>
+			</div>
+		</div>
+	</footer>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js" integrity="sha512-Eak/29OTpb36LLo2r47IpVzPBLXnAMPAVypbSZiZ4Qkf8p/7S/XRG5xp7OKWPPYfJT6metI+IORkR5G8F900+g==" crossorigin="anonymous"></script>
+    <script>
+        const wow = new WOW({
+            animateClass: "animate__animated"
+        });
+        wow.init();
+	</script>
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>	
+</body>
+</html>
