@@ -7235,7 +7235,7 @@ header {
     color: #979797;
     cursor: pointer;
     font-weight: bold; }
-  header header nav .navbar-text.active {
+  header nav .navbar-text.active {
     color: white; }
 
 /*INDEX*/
@@ -7344,12 +7344,12 @@ header {
     -webkit-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0); } }
 
-article .portadas {
+div .portadas {
   border-bottom: 2px solid white;
   height: 600px;
   object-fit: cover; }
 
-article .portadas.d-block {
+div .portadas.d-block {
   height: 500px; }
 
 .titulos-secciones {

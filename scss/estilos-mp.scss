@@ -100,8 +100,7 @@ header{
         cursor: pointer;
         font-weight: bold;
     }
-    
-    header nav .navbar-text.active{color: rgb(255, 255, 255);}
+    nav .navbar-text.active{color: rgb(255, 255, 255);}
 }
 
 
@@ -227,13 +226,13 @@ height: 500px;
 
 //SECCIONES
 
-article .portadas{//imagenes de portada en algunas secciones
+div .portadas{//imagenes de portada en algunas secciones
     border-bottom: 2px solid white;
     height: 600px;
     object-fit: cover;
 }
 
-article .portadas.d-block{//imagenes de portada en algunas secciones para tablet o menores
+div .portadas.d-block{//imagenes de portada en algunas secciones para tablet o menores
     height: 500px;
 }
 
