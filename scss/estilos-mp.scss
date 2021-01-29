@@ -39,7 +39,6 @@ body{
     top: 0px;
 }
 
-
 body .arriba{
     display: inline-block;
     color: ivory;
@@ -70,44 +69,40 @@ header{
     right: 0;
     position: sticky;
     z-index: 10;
-    .navbar-dark .navbar-nav .nav-link:hover, .navbar-text:hover {
-        color: rgb(255, 255, 255);
-        transform: scale(1.1);
-    }
-    
-    .dropdown-menu.midropmenu{
-        background-color: rgba(27, 27, 27, 0.9);
-        border-top: 4px solid white;
-    }
-    
-    .dropdown-item.midropitem{
-        font-size: 1.35rem;
-        color: rgb(151, 151, 151);
-        font-weight: bold;
-    }
-    
-    .dropdown-item.midropitem:hover{
-        color: rgb(255, 255, 255);
-        transform: scale(1.1);
-        background-color: transparent;
-    }
-    
-    nav ul li a, nav ul li span{
+    .navbar .navbar-nav .nav-item .nav-link, .navbar .navbar-nav .navbar-text{
         text-decoration: none;
         text-transform: uppercase;
         font-size: 1.35rem;
         color: rgb(151, 151, 151);
-        cursor: pointer;
         font-weight: bold;
+        &:hover{
+            color: rgb(255, 255, 255);
+            transform: scale(1.1);
+        }
+        &.active{color: rgb(255, 255, 255);}
     }
-    nav .navbar-text.active{color: rgb(255, 255, 255);}
+    .dropdown-menu.midropmenu{
+        background-color: rgba(27, 27, 27, 0.9);
+        border-top: 4px solid white;
+        text-transform: uppercase;
+        .dropdown-item.midropitem{
+            font-size: 1.35rem;
+            color: rgb(151, 151, 151);
+            font-weight: bold;
+            &:hover{
+                color: rgb(255, 255, 255);
+                transform: scale(1.1);
+                background-color: transparent;
+            }
+        }
+    }
 }
 
 
 /*INDEX*/
 
 
-.slider-ppal{/*quiero que el carousel no disminuya su altura*/
+.slider-ppal{//slider principal de altura constante
 height: 500px;
     #CarouselPpal {
         .carousel-img img{
@@ -162,7 +157,7 @@ height: 500px;
 
 .testimonios,.servicios{
     height: 45vh;
-    overflow: AUTO;
+    overflow: hidden;
     background-color: rgb(59, 59, 59);
     color: $color-texto;
     img{object-fit: cover;}
@@ -172,13 +167,12 @@ height: 500px;
         left: 0;
         right: 0;
         top: 0;
-        max-width: 90%;
-        margin: auto;
         h3, p{
             background-color: $bg-cartel;
             color: $color-texto;
             padding: 1rem;
             border-radius: 5px;
+            max-width: 90%;
         }
         a{
             font-size: 1.5rem;

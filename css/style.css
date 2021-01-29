@@ -7214,33 +7214,32 @@ header {
   right: 0;
   position: sticky;
   z-index: 10; }
-  header .navbar-dark .navbar-nav .nav-link:hover, header .navbar-text:hover {
-    color: white;
-    transform: scale(1.1); }
-  header .dropdown-menu.midropmenu {
-    background-color: rgba(27, 27, 27, 0.9);
-    border-top: 4px solid white; }
-  header .dropdown-item.midropitem {
-    font-size: 1.35rem;
-    color: #979797;
-    font-weight: bold; }
-  header .dropdown-item.midropitem:hover {
-    color: white;
-    transform: scale(1.1);
-    background-color: transparent; }
-  header nav ul li a, header nav ul li span {
+  header .navbar .navbar-nav .nav-item .nav-link, header .navbar .navbar-nav .navbar-text {
     text-decoration: none;
     text-transform: uppercase;
     font-size: 1.35rem;
     color: #979797;
-    cursor: pointer;
     font-weight: bold; }
-  header nav .navbar-text.active {
-    color: white; }
+    header .navbar .navbar-nav .nav-item .nav-link:hover, header .navbar .navbar-nav .navbar-text:hover {
+      color: white;
+      transform: scale(1.1); }
+    header .navbar .navbar-nav .nav-item .nav-link.active, header .navbar .navbar-nav .navbar-text.active {
+      color: white; }
+  header .dropdown-menu.midropmenu {
+    background-color: rgba(27, 27, 27, 0.9);
+    border-top: 4px solid white;
+    text-transform: uppercase; }
+    header .dropdown-menu.midropmenu .dropdown-item.midropitem {
+      font-size: 1.35rem;
+      color: #979797;
+      font-weight: bold; }
+      header .dropdown-menu.midropmenu .dropdown-item.midropitem:hover {
+        color: white;
+        transform: scale(1.1);
+        background-color: transparent; }
 
 /*INDEX*/
 .slider-ppal {
-  /*quiero que el carousel no disminuya su altura*/
   height: 500px; }
   .slider-ppal #CarouselPpal .carousel-img img {
     object-fit: cover;
@@ -7290,7 +7289,7 @@ header {
 
 .testimonios, .servicios {
   height: 45vh;
-  overflow: AUTO;
+  overflow: hidden;
   background-color: #3b3b3b;
   color: #c4c4c4; }
   .testimonios img, .servicios img {
@@ -7300,14 +7299,13 @@ header {
     bottom: 0;
     left: 0;
     right: 0;
-    top: 0;
-    max-width: 90%;
-    margin: auto; }
+    top: 0; }
     .testimonios .servicios-texto h3, .testimonios .servicios-texto p, .servicios .servicios-texto h3, .servicios .servicios-texto p {
       background-color: rgba(27, 27, 27, 0.7);
       color: #c4c4c4;
       padding: 1rem;
-      border-radius: 5px; }
+      border-radius: 5px;
+      max-width: 90%; }
     .testimonios .servicios-texto a, .servicios .servicios-texto a {
       font-size: 1.5rem;
       border-radius: 5px;
