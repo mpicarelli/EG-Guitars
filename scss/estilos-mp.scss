@@ -224,10 +224,7 @@ div .portadas{//imagenes de portada en algunas secciones
     border-bottom: 2px solid white;
     height: 600px;
     object-fit: cover;
-}
-
-div .portadas.d-block{//imagenes de portada en algunas secciones para tablet o menores
-    height: 500px;
+    &.d-block{height: 500px;}
 }
 
 .titulos-secciones{ //titulo grande de las secciones excepto inicio
@@ -236,36 +233,35 @@ div .portadas.d-block{//imagenes de portada en algunas secciones para tablet o m
     text-transform: uppercase;
     color: rgb(80, 80, 80);
     padding: 0.5rem 0;
+    h1{
+        font-weight: bold;
+        letter-spacing: 3px;
+        font-size: 2rem;
+        line-height: 3rem;
+    }
 }
 
-.titulos-secciones .container h1{
-    font-weight: bold;
-    letter-spacing: 3px;
-    font-size: 2rem;
-    line-height: 3rem;
-}
-
-.inicio-seccion h3, .inicio-seccion h2, article h3{
+.inicio-seccion, article{
+    h3, h2{
     color:rgb(196, 196, 196);
     font-size: 1.5rem;
     font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 2px;
-}
-
-.inicio-seccion p{//para secciones que tienen parrafos al inicio
-    font-size: 1.2rem;
+    }
+    p{//parrafos al inicio con letras un poco mas grandes
+        font-size: 1.2rem;
+    }
 }
 
 article .firma{
     font-family: "oswald",sans-serif;
     font-weight: bold;
     font-size: 1.3rem;
-}
-
-article .firma p{
-    text-align: left;
-    padding: 1rem;
+    p{
+        text-align: left;
+        padding: 1rem;
+    }
 }
 
 .a-contacto{font-size: 1.3rem;}
@@ -276,17 +272,11 @@ article .firma p{
     width: 50%;
     height: 300px;
     padding: 2px;
-}
-
-.fotos-mics div img{
-    object-fit: cover;
-    width: 100%;
-    height: 100%;
-}
-
-@media (max-width: 576px){
-    .fotos-mics > *{
-        height: 250px;
+    @media (max-width: 576px){height: 250px;}
+    img{
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
     }
 }
 
@@ -374,7 +364,7 @@ article .firma p{
     .grid-showroom article:nth-child(6){order: 6;}
     .grid-showroom article:nth-child(7){order: 3;} 
     .grid-showroom article:nth-child(5){grid-column: span 2;}
-    .grid-showroom article:first-child{grid-column: span 1;}
+    .grid-showroom article:first-child {grid-column: span 1;}
     .grid-showroom article:nth-child(2),.grid-showroom article:nth-child(7){grid-ROW: span 2;}
     .grid-showroom article:nth-child(3){height: 250px;}
     .grid-showroom article:nth-child(2) .fototitulo, 
