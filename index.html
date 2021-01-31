@@ -14,16 +14,18 @@
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
-	<article id="arriba"></article>
+	<article id="arriba"></article> <!--aca viene cuando doy click en flecha de volver arriba -->
 	<header>
 		<div class="container">
 			<nav class="navbar navbar-expand-md navbar-dark bg-none">
+				<!-- navbar colapsada -->
 				<a class="navbar-brand d-md-none d-flex flex-grow-1 justify-content-center" href="index.html">
 					<img src="imagenes/LogoGris.png" alt="logo EG GUITARS" width="170">
 				</a>
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navegacion" aria-controls="navegacion" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon"></span>
 				</button>
+				<!-- navbar normal - expandida -->
 				<div class="collapse navbar-collapse" id="navegacion">
 					<ul class="navbar-nav w-100 align-items-center justify-content-around">
 						<li class="nav-item flex-grow-1 text-center">
@@ -56,13 +58,13 @@
 			</nav>
 		</div>
 	</header>
-	<main class="todofondo">
+	<main class="todofondo"><!-- para darle una capa gris al fondo -->
 		<div class="container">
-			<section class="slider-ppal">
+			<section class="slider-ppal"> <!-- carousel de inicio del sitio -->
 				<div id="CarouselPpal" class="carousel slide carousel-fade" data-ride="carousel">
 					<div class="carousel-inner">
-						<div class="carousel-item active">
-							<div class="carousel-img">
+						<div class="carousel-item active"> 
+							<div class="carousel-img"> <!-- esta clase es para darle altura constante -->
 								<img src="imagenes/carousel/rosie-mate1.jpeg" class="d-block w-100" alt="fondo con guitarra en proceso de construccion">
 							</div>
 							<div class="carousel-caption h-100 w-100 d-flex flex-column justify-content-center">
@@ -73,7 +75,7 @@
 							</div>
 						</div>
 						<div class="carousel-item">
-							<a class="carousel-img" href="servicios.html">
+							<a class="carousel-img" href="servicios.html"> <!-- esta clase es para darle altura constante -->
 								<img src="imagenes/carousel/slide-servicios.jpg" class="d-none d-md-block w-100" alt="mantenimiento a una guitarra electroacustica">
 								<img src="imagenes/carousel/slide-servicios-cel.jpg" class="d-block d-md-none w-100" alt="mantenimiento a una guitarra electroacustica">
 							</a>
@@ -85,7 +87,7 @@
 							</a>
 						</div>
 						<div class="carousel-item">
-							<a class="carousel-img" href="showroom.html">
+							<a class="carousel-img" href="showroom.html"> <!-- esta clase es para darle altura constante -->
 								<img src="imagenes/carousel/slide-modelos.jpg" class="d-none d-md-block w-100" alt="clavijero de EG GUITARS Jetson">
 								<img src="imagenes/carousel/slide-modelos-cel.jpg" class="d-block d-md-none w-100" alt="clavijero de EG GUITARS Jetson">
 							</a>
@@ -97,18 +99,19 @@
 							</a>
 						</div>
 						<div class="carousel-item">
-							<a class="carousel-img" href="mics.html">
+							<a class="carousel-img" href="mics.html"> <!-- esta clase es para darle altura constante -->
 								<img src="imagenes/carousel/slide-mics.jpg" class="d-none d-md-block w-100" alt="varios sets de microfonos EG">
 								<img src="imagenes/carousel/slide-mics-cel.jpg" class="d-block d-md-none w-100" alt="varios sets de microfonos EG">
 							</a>
-						<a href="mics.html" class="carousel-caption h-100 w-100 d-flex flex-column justify-content-center">
-							<div class="d-flex flex-column justify-content-center">
-								<h2>EG PICKUPS</h2>
-								<p>Los microfonos EG-PICKUPS estan realizados con los mismos materiales de las grandes marcas para que obtengas el sonido  que deseas</p>
-							</div>
-						</a>
+							<a href="mics.html" class="carousel-caption h-100 w-100 d-flex flex-column justify-content-center">
+								<div class="d-flex flex-column justify-content-center">
+									<h2>EG PICKUPS</h2>
+									<p>Los microfonos EG-PICKUPS estan realizados con los mismos materiales de las grandes marcas para que obtengas el sonido  que deseas</p>
+								</div>
+							</a>
+						</div>
 					</div>
-					</div>
+					<!-- personalizando flechas carousel -->
 					<a class="carousel-flecha prev" href="#CarouselPpal" role="button" data-slide="prev">
 						<span aria-hidden="true"><i class="fas fa-chevron-left"></i></span>
 						<span class="sr-only">Previous</span>
@@ -119,7 +122,9 @@
 					</a>
 				</div>
 			</section>
-			<section class="row m-0">	
+			<!-- segunda seccion: el resto debajo del carousel 3 articulos -->
+			<section class="row m-0">
+				<!-- carousel con comentarios de clientes -->	
 				<article class=" testimonios col-12 col-md-6">
 					<div id="CarouselReviews" class="carousel slide carousel-fade h-100 d-flex align-items-center" data-ride="carousel">
 						<div class="carousel-inner">
@@ -135,6 +140,7 @@
 						</div>
 					</div>
 				</article>
+				<!-- foto con link a servicios -->
 				<article class="servicios col-12 col-md-6 p-0">
 					<img class="w-100 h-100" src="imagenes/reentrastado.jpg">
 					<a href="servicios.html" class="w-100 servicios-texto d-flex flex-column justify-content-center align-items-center">
@@ -143,12 +149,12 @@
 					</a>
 				</article>
 			</section>
-			<article class="videohome">
+			<article class="videohome"><!-- clase generada para mantener aspec ratio del video -->
 				<iframe  src="https://www.youtube.com/embed/iN4Ldqm8hIs" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 			</article>
 		</div>
 	</main>
-	<a class="arriba wow animate__animated animate__fadeInLeft" href="#arriba">
+	<a class="arriba wow animate__animated animate__fadeInLeft" href="#arriba"><!-- llevame arriba -->
 		<i class="fas fa-chevron-up"></i>
 	</a>		
 	<footer class="w-100 py-3">

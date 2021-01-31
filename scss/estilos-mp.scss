@@ -1,4 +1,4 @@
-/*GENERALES*/
+///////GENERALES
 $titulo-blanco: ivory;
 $color-texto: rgb(196, 196, 196);
 $titulo-seccion: rgb(80, 80, 80);
@@ -17,29 +17,26 @@ body{
     background-image: url(../imagenes/grunge-wall-texture.jpg);
     background-position: top left;
     background-attachment: fixed;
-    /*llevar footer abajo de todo en la pagina*/
+    //llevar footer abajo de todo en la pagina
     padding-bottom: 67px;
     position: relative;
     min-height: 100vh;
 }
 
-@media (max-width:576px){/*adaptado a tamaños chicos*/
-    body{
-        padding-bottom: 121px;
-    }
+@media (max-width:576px){//adaptado a tamaños chicos que el footer se hace mas alto
+    body{padding-bottom: 121px;}
 }
 
-.todofondo{/*le da una capa gris traslucida asi no se nota mucho el fondo*/
+.todofondo{//le da una capa gris traslucida asi no se nota mucho el fondo
     background-color: rgba(59, 59, 59, 0.5);
     min-height: 75vh;
 }
 
 #arriba{
-    position:absolute;
-    top: 0px;
+    position:absolute; top: 0px;
 }
 
-body .arriba{
+body .arriba{ //chevrom llevame arriba
     display: inline-block;
     color: ivory;
     text-decoration: none;
@@ -51,15 +48,12 @@ body .arriba{
     background-color: rgba(109,109,109,0.65);
     margin-left: 20px;
     border-radius: 15%;
-}
-
-.arriba:hover{
-    opacity: 1;
-    background-color: rgba(109,109,109,1);
+    &:hover{    opacity: 1;
+        background-color: rgba(109,109,109,1);}
 }
 
 
-/*HEADER Y NAVEGACION*/
+////////////HEADER Y NAVEGACION
 
 header{
     background-color: rgba(27, 27, 27, 0.9);
@@ -99,7 +93,7 @@ header{
 }
 
 
-/*INDEX*/
+////////INDEX
 
 
 .slider-ppal{//slider principal de altura constante
@@ -191,7 +185,7 @@ height: 500px;
     }
 }
 
-.videohome {/*video al final del index*/
+.videohome {//video al final del index
     position: relative;
     padding-bottom: 56.25%;
     height: 0;
@@ -205,7 +199,7 @@ height: 500px;
     }
 }
 
-@keyframes fadeInUp {/*animacion fadeinUP para los slides*/
+@keyframes fadeInUp {//animacion para los slides
     from {
     opacity: 0;
     -webkit-transform: translate3d(0, 100%, 0);
@@ -218,7 +212,7 @@ height: 500px;
     }
 }
 
-//SECCIONES
+//////PORTADAS Y TEXTOS INICIALES
 
 div .portadas{//imagenes de portada en algunas secciones
     border-bottom: 2px solid white;
@@ -249,12 +243,12 @@ div .portadas{//imagenes de portada en algunas secciones
     text-transform: uppercase;
     letter-spacing: 2px;
     }
-    p{//parrafos al inicio con letras un poco mas grandes
+    p{
         font-size: 1.2rem;
     }
 }
 
-article .firma{
+article .firma{//FIRMA EN  DESCRIPCION DE TALLER - PAGINA SERVICIOS
     font-family: "oswald",sans-serif;
     font-weight: bold;
     font-size: 1.3rem;
@@ -266,7 +260,7 @@ article .firma{
 
 .a-contacto{font-size: 1.3rem;}
 
-//secciones mics
+/////// SECCION EG PICKUPS
 
 .fotos-mics > *{
     width: 50%;
@@ -280,10 +274,11 @@ article .firma{
     }
 }
 
-//grillas de servicios, modelos  y stock
+//SECCIONES SERVICIOS, MODELOS Y STOCK
 
 
-@media (min-width: 992px){
+@media (min-width: 992px){ // ASI SE COMPORTAN EN TAMAÑO GRANDE
+    //////SERVICIOS
     .grid-servicios{
         display: grid;
         grid-template-columns:1fr 1fr;
@@ -296,12 +291,15 @@ article .firma{
     .grid-servicios article:nth-child(5){
         grid-column: span 2;
     }
+    ////////STOCK
     .gridstock{
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-template-rows: 300px;
         gap: 2px;
     }
+
+    ///////MODELOS
     .grid-showroom{
         display: grid;
         grid-template-columns: repeat(3, 1fr);
@@ -321,6 +319,8 @@ article .firma{
         grid-column: span 3;
     }
     
+    ///////COMUNES A LAS 3
+
     .grid-servicios article .fototitulo, 
     .grid-showroom article .fototitulo, 
     .gridstock article .fototitulo{
@@ -342,20 +342,22 @@ article .firma{
     }
 }
 
-@media (max-width: 991px) and (min-width: 768px){
+@media (max-width: 991px) and (min-width: 768px){// COMPORTAMIENTO TABLET
+    /////////SERVICIOS
     .grid-servicios{
         display: grid;
         grid-template-columns:1fr 1fr;
         grid-auto-flow: dense;
     }
     .grid-servicios article:nth-child(5){grid-column: span 2;}
-
+    ///////MODELOS
     .grid-showroom{
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 2px;
         margin-top: 3rem;
     }
+    //CAMBIO DE UBICACION EN GRILLA DE MODELOS
     .grid-showroom article:nth-child(1){order: 4;}
     .grid-showroom article:nth-child(2){order: 1;} 
     .grid-showroom article:nth-child(3){order: 2;} 
@@ -371,8 +373,10 @@ article .firma{
     .grid-showroom article:nth-child(7) .fototitulo{height: 500px;}
     .grid-showroom article:nth-child(5) .fototitulo{height: 300px;}
 
+    ///////STOCK
     .gridstock{grid-template-rows: 250px;}
 
+    /////COMUNES A LAS 3
     .grid-servicios article .fototitulo,
     .grid-showroom article .fototitulo,  
     .gridstock article .fototitulo{
@@ -382,7 +386,8 @@ article .firma{
     }
 }
 
-@media (max-width: 767px){
+@media (max-width: 767px){//COMPORTAMIENTO MEDIANO - CHICO
+    //TODOS PASAN A SER FLEX COLUMN
     .grid-servicios, .grid-showroom, .gridstock{
         display: flex;
         flex-direction: column;
@@ -398,12 +403,13 @@ article .firma{
     .grid-servicios article h2{font-size: 2rem;}
 }
 
+//ACOMODANDO LAS FOTOS Y LOS TITULOS DE LAS FOTOS
 .grid-servicios article, .grid-showroom article, .gridstock article {
 display:flex;
 flex-direction: column;
 }
 
-.grid-servicios p, .grid-showroom p{
+.grid-servicios p{
     font-size: 1rem;
     text-align: justify;
     padding: 0.5rem 1rem;
@@ -444,6 +450,7 @@ object-fit: cover;
     padding: 1rem;
 }
 
+//RESALTANDO LOS LINKS
 .grid-servicios article:nth-child(7) a, .a-contacto a{
     color: rgb(197, 197, 197);
     font-family: "roboto", sans-serif;
@@ -458,6 +465,8 @@ object-fit: cover;
     cursor: pointer;
 }
 
+
+//ANIMACIONES EN LAS FOTOS
 .grid-showroom article .fototitulo{
     overflow: hidden;
 }
@@ -477,7 +486,9 @@ object-fit: cover;
 } 
 
 
-@media (min-width: 769px){
+////// CONTACTO
+
+@media (min-width: 769px){//PARRAFO Y FORMULARIO UNO AL LADO DEL OTRO
     .formulario{
         background-color: rgb(31, 31, 31);
         display: flex;
@@ -489,7 +500,7 @@ object-fit: cover;
     }
 }
     
-@media (max-width: 768px){
+@media (max-width: 768px){ //PARRAFO Y FORMULARIO UNO DEBAJO DEL OTRO
     .formulario{
         background-color: rgb(31, 31, 31);
         display: flex;
@@ -524,7 +535,7 @@ height: 40px;
     background-color: ivory;
 }
 
-/*footer*/
+/////FOOTER
 
 footer{
     background-color: black;
