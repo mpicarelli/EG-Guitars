@@ -7527,13 +7527,13 @@ article .firma {
   object-fit: cover; }
 
 .grid-servicios h2, .grid-showroom h2, .gridstock h2 {
-  color: #c5c5c5;
+  color: #e4e4e4;
   text-transform: uppercase;
   font-weight: 700;
   font-size: 2rem;
   text-shadow: 2px 1px 1px black;
   padding: 0.5rem;
-  background-color: rgba(27, 27, 27, 0.7);
+  background-color: rgba(27, 27, 27, 0.2);
   border-radius: 10%; }
 
 .box-tittle {
