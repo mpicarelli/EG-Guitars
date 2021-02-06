@@ -153,29 +153,27 @@ height: 500px;
     }
 }
 
-.testimonios,.servicios{
-    height: 500px;
+.testimonios{
     background-color: rgb(59, 59, 59);
     color: $color-texto;
-    img{object-fit: cover;}
-    .carousel-inner{
-        @media(max-width: 575px) {height: 600px;}
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;  
-        .carousel-item{
-            min-height: 100%;
-            .centrando-carousel{
-                position: absolute;
-                bottom: 0;
-                left: 0;
-                right: 0;
-                top: 0;
-            }
+    .centrando-carousel{
+        min-height: 400px;
+    }
+    a{
+        color: rgb(197, 197, 197);
+        font-family: "roboto", sans-serif;
+        font-size: 1.3rem;
+        text-decoration: none;
+        cursor: pointer;
+        font-weight: bold;
+        &:hover{
+            color: rgb(255, 255, 255);
+            transform: scale(1.1);
         }
     }
+}
+.servicios{
+    img{object-fit: cover;}
     .servicios-texto{
         position: absolute;
         bottom: 0;
@@ -205,9 +203,8 @@ height: 500px;
         }
     }
 }
-.testimonios{
-    @media(max-width: 575px) {height: 600px;}
-}
+
+
 .videohome {//video al final del index
     position: relative;
     padding-bottom: 56.25%;
