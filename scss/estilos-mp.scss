@@ -154,11 +154,28 @@ height: 500px;
 }
 
 .testimonios,.servicios{
-    height: 45vh;
-    overflow: hidden;
+    height: 500px;
     background-color: rgb(59, 59, 59);
     color: $color-texto;
     img{object-fit: cover;}
+    .carousel-inner{
+        @media(max-width: 575px) {height: 600px;}
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;  
+        .carousel-item{
+            min-height: 100%;
+            .centrando-carousel{
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                top: 0;
+            }
+        }
+    }
     .servicios-texto{
         position: absolute;
         bottom: 0;
@@ -188,7 +205,9 @@ height: 500px;
         }
     }
 }
-
+.testimonios{
+    @media(max-width: 575px) {height: 600px;}
+}
 .videohome {//video al final del index
     position: relative;
     padding-bottom: 56.25%;
@@ -450,7 +469,7 @@ object-fit: cover;
     bottom: 0;
     left: 0;
     right: 0;
-    top: 0px;
+    top: 0;
     padding: 1rem;
 }
 

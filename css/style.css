@@ -7282,12 +7282,28 @@ header {
       padding: 0 2rem; }
 
 .testimonios, .servicios {
-  height: 45vh;
-  overflow: hidden;
+  height: 500px;
   background-color: #3b3b3b;
   color: #c4c4c4; }
   .testimonios img, .servicios img {
     object-fit: cover; }
+  .testimonios .carousel-inner, .servicios .carousel-inner {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0; }
+    @media (max-width: 575px) {
+      .testimonios .carousel-inner, .servicios .carousel-inner {
+        height: 600px; } }
+    .testimonios .carousel-inner .carousel-item, .servicios .carousel-inner .carousel-item {
+      min-height: 100%; }
+      .testimonios .carousel-inner .carousel-item .centrando-carousel, .servicios .carousel-inner .carousel-item .centrando-carousel {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        top: 0; }
   .testimonios .servicios-texto, .servicios .servicios-texto {
     position: absolute;
     bottom: 0;
@@ -7311,6 +7327,10 @@ header {
       .testimonios .servicios-texto:hover h3, .testimonios .servicios-texto:hover p, .servicios .servicios-texto:hover h3, .servicios .servicios-texto:hover p {
         color: ivory;
         transform: scale(1.1); }
+
+@media (max-width: 575px) {
+  .testimonios {
+    height: 600px; } }
 
 .videohome {
   position: relative;
@@ -7529,7 +7549,7 @@ article .firma {
   bottom: 0;
   left: 0;
   right: 0;
-  top: 0px;
+  top: 0;
   padding: 1rem; }
 
 .grid-servicios article:nth-child(7) a, .a-contacto a {
