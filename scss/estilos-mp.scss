@@ -21,11 +21,11 @@ body{
     padding-bottom: 67px;
     position: relative;
     min-height: 100vh;
+    @media (max-width:576px){//adaptado a tamaños chicos que el footer se hace mas alto
+        padding-bottom: 121px;
+    }
 }
 
-@media (max-width:576px){//adaptado a tamaños chicos que el footer se hace mas alto
-    body{padding-bottom: 121px;}
-}
 
 .todofondo{//le da una capa gris traslucida asi no se nota mucho el fondo
     background-color: rgba(59, 59, 59, 0.5);
@@ -63,22 +63,26 @@ header{
     right: 0;
     position: sticky;
     z-index: 10;
-    .navbar .navbar-nav .nav-item .nav-link, .navbar .navbar-nav .navbar-text{
-        text-decoration: none;
-        text-transform: uppercase;
-        font-size: 1.35rem;
-        color: rgb(151, 151, 151);
-        font-weight: bold;
-        &:hover{
-            color: rgb(255, 255, 255);
-            transform: scale(1.1);
+    .nav-item {
+        @media (min-width: 768px){height: 110px};
+        .nav-link, .navbar-text{
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 1.35rem;
+            color: rgb(151, 151, 151);
+            font-weight: bold;
+            &:hover{
+                color: rgb(255, 255, 255);
+                transform: scale(1.1);
+            }
+            &.active{color: rgb(255, 255, 255);}
         }
-        &.active{color: rgb(255, 255, 255);}
     }
     .dropdown-menu.midropmenu{
         background-color: rgba(27, 27, 27, 0.9);
         border-top: 4px solid white;
         text-transform: uppercase;
+        //@media (min-width: 768px){right: -1px;};
         .dropdown-item.midropitem{
             font-size: 1.35rem;
             color: rgb(151, 151, 151);

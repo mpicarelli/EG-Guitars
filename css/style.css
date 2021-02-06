@@ -7170,10 +7170,9 @@ body {
   padding-bottom: 67px;
   position: relative;
   min-height: 100vh; }
-
-@media (max-width: 576px) {
-  body {
-    padding-bottom: 121px; } }
+  @media (max-width: 576px) {
+    body {
+      padding-bottom: 121px; } }
 
 .todofondo {
   background-color: rgba(59, 59, 59, 0.5);
@@ -7207,16 +7206,19 @@ header {
   right: 0;
   position: sticky;
   z-index: 10; }
-  header .navbar .navbar-nav .nav-item .nav-link, header .navbar .navbar-nav .navbar-text {
+  @media (min-width: 768px) {
+    header .nav-item {
+      height: 110px; } }
+  header .nav-item .nav-link, header .nav-item .navbar-text {
     text-decoration: none;
     text-transform: uppercase;
     font-size: 1.35rem;
     color: #979797;
     font-weight: bold; }
-    header .navbar .navbar-nav .nav-item .nav-link:hover, header .navbar .navbar-nav .navbar-text:hover {
+    header .nav-item .nav-link:hover, header .nav-item .navbar-text:hover {
       color: white;
       transform: scale(1.1); }
-    header .navbar .navbar-nav .nav-item .nav-link.active, header .navbar .navbar-nav .navbar-text.active {
+    header .nav-item .nav-link.active, header .nav-item .navbar-text.active {
       color: white; }
   header .dropdown-menu.midropmenu {
     background-color: rgba(27, 27, 27, 0.9);
