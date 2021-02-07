@@ -7366,7 +7366,7 @@ div .portadas {
     line-height: 3rem; }
 
 .inicio-seccion h3, .inicio-seccion h2, article h3, article h2 {
-  color: #c4c4c4;
+  color: ivory;
   font-size: 1.5rem;
   font-weight: bold;
   text-transform: uppercase;
@@ -7380,6 +7380,7 @@ article .firma {
   font-weight: bold;
   font-size: 1.3rem; }
   article .firma p {
+    color: ivory;
     text-align: left;
     padding: 1rem; }
 
@@ -7548,7 +7549,7 @@ article .firma {
   color: #c5c5c5;
   font-family: "roboto", sans-serif;
   font-size: 1.3rem;
-  text-decoration: none;
+  text-decoration: underline;
   cursor: pointer;
   font-weight: bold; }
 

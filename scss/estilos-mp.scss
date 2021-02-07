@@ -257,7 +257,7 @@ div .portadas{//imagenes de portada en algunas secciones
 
 .inicio-seccion, article{
     h3, h2{
-    color:rgb(196, 196, 196);
+    color:ivory;
     font-size: 1.5rem;
     font-weight: bold;
     text-transform: uppercase;
@@ -273,6 +273,7 @@ article .firma{//FIRMA EN  DESCRIPCION DE TALLER - PAGINA SERVICIOS
     font-weight: bold;
     font-size: 1.3rem;
     p{
+        color: ivory;
         text-align: left;
         padding: 1rem;
     }
@@ -475,7 +476,7 @@ object-fit: cover;
     color: rgb(197, 197, 197);
     font-family: "roboto", sans-serif;
     font-size: 1.3rem;
-    text-decoration: none;
+    text-decoration: underline;
     cursor: pointer;
     font-weight: bold;
 }
