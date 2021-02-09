@@ -345,20 +345,21 @@ height: 500px;
     
     ///////COMUNES A LAS 3 ver con algo de programacion de SASS como meter todo junto! 
 
-    .grid-servicios article .fototitulo, 
-    .grid-showroom article .fototitulo, 
-    .gridstock article .fototitulo{
+    .grid-servicios, .grid-showroom, .gridstock{
+        & article .fototitulo{
         position: relative;
         display: block;
         height:300px
+        }
     }
-    .grid-servicios article:first-child .fototitulo,
-    .grid-servicios article:nth-child(3) .fototitulo,
-    .grid-showroom article:nth-child(2) .fototitulo{
-        height: 600px;
+
+    .grid-servicios article, .grid-servicios article{
+        &:first-child, &:nth-child(3){& .fototitulo{height: 600px;}}         
     }
-    .grid-showroom article:nth-child(5) .fototitulo{
-        height: 350px;
+
+    .grid-showroom article{
+        &:nth-child(2){ .fototitulo{height: 600px;}}
+        &:nth-child(5){ .fototitulo{height: 350px;}}
     }
 }
 
@@ -410,12 +411,12 @@ height: 500px;
     .gridstock{grid-template-rows: 250px;}
 
     /////COMUNES A LAS 3
-    .grid-servicios article .fototitulo,
-    .grid-showroom article .fototitulo,  
-    .gridstock article .fototitulo{
-        position: relative;
-        display: block;
-        height:250px
+    .grid-servicios,.grid-showroom, .gridstock{
+        & article .fototitulo{
+            position: relative;
+            display: block;
+            height:250px;
+        }
     }
 }
 
@@ -467,99 +468,75 @@ height: 500px;
             object-fit: cover;
         }
     }
+    p{
+        font-size: 1rem;
+        text-align: justify;
+        padding: 0.5rem 1rem;
+        flex-shrink: 1;
+    }
 }
-
-.grid-servicios p{
-    font-size: 1rem;
-    text-align: justify;
-    padding: 0.5rem 1rem;
-    flex-shrink: 1;
-}
-
 
 //RESALTANDO LOS LINKS
-.grid-servicios article:nth-child(7) a, .a-contacto a{
+.grid-servicios article:nth-child(7) a{
     color: rgb(197, 197, 197);
     font-family: "roboto", sans-serif;
     font-size: 1.3rem;
     text-decoration: underline;
     cursor: pointer;
     font-weight: bold;
+    &:hover{
+        color: rgb(255, 255, 255);
+    }
 }
-
-.grid-servicios article:nth-child(7) a:hover, .a-contacto a:hover{
-    color: rgb(255, 255, 255);
-    cursor: pointer;
-}
-
 
 //ANIMACIONES EN LAS FOTOS
 .grid-showroom article .fototitulo{
     overflow: hidden;
+    & > *{transition: all 500ms;}
+    &:hover{
+        img{
+            filter: brightness(1.5);
+            filter: contrast(0.5);
+            transform: scale(1.1);     
+        }
+        .box-tittle{transform: scale(1.1);}
+    }
 }
-
-.grid-showroom article .fototitulo > *{
-    transition: all 500ms;
-}
-
-.grid-showroom article .fototitulo:hover img{
-    filter: brightness(1.5);
-    filter: contrast(0.5);
-    transform: scale(1.1);
-} 
-
-.grid-showroom article .fototitulo:hover .box-tittle{
-    transform: scale(1.1);
-} 
-
 
 ////// CONTACTO
-
-@media (min-width: 769px){//PARRAFO Y FORMULARIO UNO AL LADO DEL OTRO
-    .formulario{
+.formulario{
+    @media (min-width: 769px){//PARRAFO Y FORMULARIO UNO AL LADO DEL OTRO
         background-color: rgb(31, 31, 31);
         display: flex;
         flex-wrap: wrap;
         align-items: center;
+        & > *{width: 50%;}
     }
-        .formulario > *{
-            width: 50%;
-    }
-}
-    
-@media (max-width: 768px){ //PARRAFO Y FORMULARIO UNO DEBAJO DEL OTRO
-    .formulario{
+    @media (max-width: 768px){ //PARRAFO Y FORMULARIO UNO DEBAJO DEL OTRO
         background-color: rgb(31, 31, 31);
         display: flex;
         flex-direction: column;
         align-items: center;
+        & > *{width: 100%;}
     }
-    .formulario > *{width: 100%;}
-}
-    
-.formulario .formulario-texto{
-    font-size: 1.3rem;
-}
-form .form-input{
-height: 40px;
-}
-    
-.boton{
-    background-color: rgb(207, 207, 207);
-    color: rgb(71, 71, 71);
-    border: none;
-    font-family: "oswald",sans-serif;
-    font-size: 1.2rem;
-    font-weight: bold;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    padding: 5px 15px;
-    cursor: pointer;
-}
-    
-.boton:hover{
-    transform: scale(1.2);
-    background-color: ivory;
+    .formulario-texto{font-size: 1.3rem;}
+    form .form-input{height: 40px;}
+    .boton{
+        background-color: rgb(207, 207, 207);
+        color: rgb(71, 71, 71);
+        border: none;
+        font-family: "oswald",sans-serif;
+        font-size: 1.2rem;
+        font-weight: bold;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        padding: 5px 15px;
+        cursor: pointer;
+        &:hover{
+            transform: scale(1.15);
+            background-color: ivory;
+        }
+    }
 }
 
 /////FOOTER
@@ -568,34 +545,32 @@ footer{
     background-color: black;
     position: absolute;
     bottom: 0;
-}
-
-footer p, footer a, footer h3{
-    color: ivory;
-    text-decoration: none;
-    font-size: 1rem;
-}
-
-.insta,.face,.yt{
-    opacity: 0.65;
-    font-size: 1.8rem;
-    letter-spacing: 7px;
-}
-.insta:hover, .face:hover, .yt:hover{
-    opacity: 1;
-    transform: scale(1.2);
-    text-decoration: none;
-    color: ivory;
-}
-
-.logos a:hover{ /*bootsrap me agregaba hover a los "a" que cubren los iconos, los mato con esto*/
-    opacity: 1;
-    text-decoration: none;
-    color: ivory;
-}
-
-footer span{
-    color: red;
-    font-weight: bold;
-    padding-left: 4px;
+    & p, & a, & h3{
+        color: ivory;
+        text-decoration: none;
+        font-size: 1rem;
+    }
+    .logos{
+        & a:hover{/*bootsrap me agregaba hover a los "a" que cubren los iconos, los mato con esto*/
+            opacity: 1;
+            text-decoration: none;
+            color: ivory;
+        }
+        .insta,.face,.yt{
+            opacity: 0.65;
+            font-size: 1.8rem;
+            letter-spacing: 7px;
+            &:hover{
+                opacity: 1;
+                transform: scale(1.2);
+                text-decoration: none;
+                color: ivory;
+            }
+        }
+    }
+    span{
+        color: red;
+        font-weight: bold;
+        padding-left: 4px;
+    }
 }
