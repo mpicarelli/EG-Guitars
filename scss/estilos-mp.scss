@@ -24,6 +24,21 @@ body{
     @media (max-width:576px){//adaptado a tamaños chicos que el footer se hace mas alto
         padding-bottom: 121px;
     }
+    .arriba{ //chevrom llevame arriba
+        display: inline-block;
+        color: ivory;
+        text-decoration: none;
+        position: absolute;
+        bottom: 125px;
+        font-size: 1.5rem;
+        line-height: 2rem;
+        padding: 5px 10px 10px 10px;
+        background-color: rgba(109,109,109,0.65);
+        margin-left: 20px;
+        border-radius: 15%;
+        &:hover{    opacity: 1;
+            background-color: rgba(109,109,109,1);}
+    }
 }
 
 
@@ -34,22 +49,6 @@ body{
 
 #arriba{
     position:absolute; top: 0px;
-}
-
-body .arriba{ //chevrom llevame arriba
-    display: inline-block;
-    color: ivory;
-    text-decoration: none;
-    position: absolute;
-    bottom: 125px;
-    font-size: 1.5rem;
-    line-height: 2rem;
-    padding: 5px 10px 10px 10px;
-    background-color: rgba(109,109,109,0.65);
-    margin-left: 20px;
-    border-radius: 15%;
-    &:hover{    opacity: 1;
-        background-color: rgba(109,109,109,1);}
 }
 
 
@@ -63,7 +62,7 @@ header{
     right: 0;
     position: sticky;
     z-index: 10;
-    .nav-item {
+    #navegacion .nav-item {
         @media (min-width: 768px){height: 110px};
         .nav-link, .navbar-text{
             text-decoration: none;
@@ -128,16 +127,16 @@ height: 500px;
             position: absolute;
             top: 0;
             bottom: 0;
-        div{
-            width: 70%;
-            background-color: $bg-cartel;
-            border-radius: 5px;
-            animation-name: fadeInUp;
-            animation-delay: 0s;
-            animation-duration: 1.5s;
-            padding: 1rem 0;
-        }
-        &:hover{text-decoration: none;}
+            div{
+                width: 70%;
+                background-color: $bg-cartel;
+                border-radius: 5px;
+                animation-name: fadeInUp;
+                animation-delay: 0s;
+                animation-duration: 1.5s;
+                padding: 1rem 0;
+            }
+            &:hover{text-decoration: none;}
             h1, h2{
                 font-size: 2rem;
                 font-weight: bold;
@@ -187,7 +186,7 @@ height: 500px;
             border-radius: 5px;
             max-width: 90%;
         }
-        a{
+        a{//ocupa todo el artiuclo
             font-size: 1.5rem;
             border-radius: 5px;
             font-weight: 700;
@@ -234,7 +233,7 @@ height: 500px;
 
 //////PORTADAS Y TEXTOS INICIALES
 
-div .portadas{//imagenes de portada en algunas secciones
+.portadas{//imagenes de portada en algunas secciones
     border-bottom: 2px solid white;
     height: 600px;
     object-fit: cover;
@@ -255,7 +254,7 @@ div .portadas{//imagenes de portada en algunas secciones
     }
 }
 
-.inicio-seccion, article{
+.textos-ppales{//parrafos luego de la foto de
     h3, h2{
     color:ivory;
     font-size: 1.5rem;
@@ -264,22 +263,27 @@ div .portadas{//imagenes de portada en algunas secciones
     letter-spacing: 2px;
     }
     p{
-        font-size: 1.2rem;
+    font-size: 1.2rem;
+        a{
+            font-size: inherit;
+            color: rgb(197, 197, 197);
+            font-family: "roboto", sans-serif; 
+            text-decoration: underline;
+            font-weight: bold;
+            &:hover{color: rgb(255, 255, 255);}
+        }
     }
-}
-
-article .firma{//FIRMA EN  DESCRIPCION DE TALLER - PAGINA SERVICIOS
-    font-family: "oswald",sans-serif;
-    font-weight: bold;
-    font-size: 1.3rem;
-    p{
+    .firma{//FIRMA EN  DESCRIPCION DE TALLER - PAGINA SERVICIOS
+        font-family: "oswald",sans-serif;
+        font-weight: bold;
+        font-size: 1.3rem;
         color: ivory;
         text-align: left;
         padding: 1rem;
+        text-transform: uppercase; 
     }
 }
 
-.a-contacto{font-size: 1.3rem;}
 
 /////// SECCION EG PICKUPS
 
@@ -304,14 +308,15 @@ article .firma{//FIRMA EN  DESCRIPCION DE TALLER - PAGINA SERVICIOS
         display: grid;
         grid-template-columns:1fr 1fr;
         grid-auto-flow: dense;
+        article{
+        &:first-child, &:nth-child(3){grid-row: span 2;}
+        &:nth-child(5){
+            grid-column: span 2;
+            h2{font-size: 3rem;}
+            }
+        }
     }
-    .grid-servicios article:first-child, 
-    .grid-servicios article:nth-child(3){
-    grid-row: span 2;
-    }
-    .grid-servicios article:nth-child(5){
-        grid-column: span 2;
-    }
+
     ////////STOCK
     .gridstock{
         display: grid;
@@ -328,19 +333,17 @@ article .firma{//FIRMA EN  DESCRIPCION DE TALLER - PAGINA SERVICIOS
         grid-auto-flow: dense;
         margin-top: 3rem;
         gap: 2px;
-    }
-    .grid-showroom article:first-child, 
-    .grid-showroom article:nth-child(7){
-        grid-column: span 2;
-    }
-    .grid-showroom article:nth-child(2){
-        grid-row: span 2;
-    }
-    .grid-showroom article:nth-child(5){
-        grid-column: span 3;
+        article{
+            &:first-child, &:nth-child(7){grid-column: span 2;}
+            &:nth-child(2){grid-row: span 2;}
+            &:nth-child(5){
+                grid-column: span 3;
+                h2{font-size: 3rem;}
+            }
+        }
     }
     
-    ///////COMUNES A LAS 3
+    ///////COMUNES A LAS 3 ver con algo de programacion de SASS como meter todo junto! 
 
     .grid-servicios article .fototitulo, 
     .grid-showroom article .fototitulo, 
@@ -357,10 +360,6 @@ article .firma{//FIRMA EN  DESCRIPCION DE TALLER - PAGINA SERVICIOS
     .grid-showroom article:nth-child(5) .fototitulo{
         height: 350px;
     }
-    .grid-servicios article:nth-child(5) h2,
-    .grid-showroom article:nth-child(5) h2{
-        font-size: 3rem;
-    }
 }
 
 @media (max-width: 991px) and (min-width: 768px){// COMPORTAMIENTO TABLET
@@ -369,30 +368,43 @@ article .firma{//FIRMA EN  DESCRIPCION DE TALLER - PAGINA SERVICIOS
         display: grid;
         grid-template-columns:1fr 1fr;
         grid-auto-flow: dense;
+        article:nth-child(5){grid-column: span 2;}
     }
-    .grid-servicios article:nth-child(5){grid-column: span 2;}
     ///////MODELOS
     .grid-showroom{
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 2px;
         margin-top: 3rem;
+        article{  //CAMBIO DE UBICACION EN GRILLA DE MODELOS
+            &:nth-child(1){
+                order: 4;
+                grid-column: span 1;
+            }            
+            &:nth-child(2){
+                order: 1;
+                grid-ROW: span 2;
+                .fototitulo{height: 500px;}
+            }
+            &:nth-child(3){
+                order: 2;
+                height: 250px; 
+            }
+            &:nth-child(4){order: 7;}
+            &:nth-child(5){
+                order: 5;
+                grid-column: span 2;
+                .fototitulo{height: 300px;}
+            }
+            &:nth-child(6){order: 6;}
+            &:nth-child(7){
+                order: 3;
+                grid-ROW: span 2;
+                .fototitulo{height: 500px;}
+            }
+        }
     }
-    //CAMBIO DE UBICACION EN GRILLA DE MODELOS
-    .grid-showroom article:nth-child(1){order: 4;}
-    .grid-showroom article:nth-child(2){order: 1;} 
-    .grid-showroom article:nth-child(3){order: 2;} 
-    .grid-showroom article:nth-child(4){order: 7;}  
-    .grid-showroom article:nth-child(5){order: 5;}
-    .grid-showroom article:nth-child(6){order: 6;}
-    .grid-showroom article:nth-child(7){order: 3;} 
-    .grid-showroom article:nth-child(5){grid-column: span 2;}
-    .grid-showroom article:first-child {grid-column: span 1;}
-    .grid-showroom article:nth-child(2),.grid-showroom article:nth-child(7){grid-ROW: span 2;}
-    .grid-showroom article:nth-child(3){height: 250px;}
-    .grid-showroom article:nth-child(2) .fototitulo, 
-    .grid-showroom article:nth-child(7) .fototitulo{height: 500px;}
-    .grid-showroom article:nth-child(5) .fototitulo{height: 300px;}
+
 
     ///////STOCK
     .gridstock{grid-template-rows: 250px;}
@@ -412,22 +424,49 @@ article .firma{//FIRMA EN  DESCRIPCION DE TALLER - PAGINA SERVICIOS
     .grid-servicios, .grid-showroom, .gridstock{
         display: flex;
         flex-direction: column;
+        & article {
+        .fototitulo{
+            position: relative;
+            display: block;
+            height:300px
+        }
+        h2{font-size: 2rem;}
+        }
     }
-    .grid-servicios article .fototitulo, 
-    .grid-showroom article .fototitulo, 
-    .gridstock article .fototitulo{
-        position: relative;
-        display: block;
-        height:300px
-    }
-
-    .grid-servicios article h2{font-size: 2rem;}
 }
 
 //ACOMODANDO LAS FOTOS Y LOS TITULOS DE LAS FOTOS
-.grid-servicios article, .grid-showroom article, .gridstock article {
-display:flex;
-flex-direction: column;
+.grid-servicios, .grid-showroom, .gridstock{
+    & h2{
+        color: rgb(228, 228, 228);
+        text-transform: uppercase;
+        font-weight: 700;
+        font-size: 2rem;
+        text-shadow: 2px 1px 1px black;
+        padding: 0.5rem;
+        background-color: rgba(27, 27, 27, 0.2);
+        border-radius: 10%;
+    }
+    & article{
+        display:flex;
+        flex-direction: column;
+        & .box-tittle{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        top: 0;
+        padding: 1rem;
+        }
+        & .fototitulo img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
 }
 
 .grid-servicios p{
@@ -437,39 +476,6 @@ flex-direction: column;
     flex-shrink: 1;
 }
 
-.grid-servicios article .box-tittle, .grid-showroom article .box-tittle, .gridstock article .box-tittle{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.grid-servicios article .fototitulo img, 
-.grid-showroom article .fototitulo img, 
-.gridstock article .fototitulo img{
-width: 100%;
-height: 100%;
-object-fit: cover;
-}
-
-.grid-servicios h2, .grid-showroom h2, .gridstock h2 {
-    color: rgb(228, 228, 228);
-    text-transform: uppercase;
-    font-weight: 700;
-    font-size: 2rem;
-    text-shadow: 2px 1px 1px black;
-    padding: 0.5rem;
-    background-color: rgba(27, 27, 27, 0.2);
-    border-radius: 10%;
-}
-
-.box-tittle{
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    top: 0;
-    padding: 1rem;
-}
 
 //RESALTANDO LOS LINKS
 .grid-servicios article:nth-child(7) a, .a-contacto a{
