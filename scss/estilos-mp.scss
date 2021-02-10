@@ -4,7 +4,7 @@ $color-texto: rgb(196, 196, 196);
 $titulo-seccion: rgb(80, 80, 80);
 $bg-cartel:  rgba(27, 27, 27, 0.7);
 
-h1, h2, h3, h4, p, nav a, a, nav span{
+h1, h2, h3, h4, a, nav span{
     font-family: "OSWALD", sans-serif;
 }
 
@@ -21,7 +21,7 @@ body{
     padding-bottom: 67px;
     position: relative;
     min-height: 100vh;
-    @media (max-width:576px){//adaptado a tamaños chicos que el footer se hace mas alto
+    @media (max-width:575px){//adaptado a tamaños chicos que el footer se hace mas alto
         padding-bottom: 121px;
     }
     .arriba{ //chevrom llevame arriba
@@ -185,6 +185,13 @@ height: 500px;
             padding: 1rem;
             border-radius: 5px;
             max-width: 90%;
+            font-size: 1.2rem;
+        }
+        h3{
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
         }
         a{//ocupa todo el artiuclo
             font-size: 1.5rem;
@@ -254,7 +261,7 @@ height: 500px;
     }
 }
 
-.textos-ppales{//parrafos luego de la foto de
+.textos-ppales{//parrafos luego de la foto de portada
     h3, h2{
     color:ivory;
     font-size: 1.5rem;
@@ -301,32 +308,80 @@ height: 500px;
 
 //SECCIONES SERVICIOS, MODELOS Y STOCK
 
-
-@media (min-width: 992px){ // ASI SE COMPORTAN EN TAMAÑO GRANDE
     //////SERVICIOS
-    .grid-servicios{
-        display: grid;
-        grid-template-columns:1fr 1fr;
-        grid-auto-flow: dense;
+.grid-servicios{
+    @media (min-width: 992px){// ASI SE COMPORTAN EN TAMAÑO GRANDE
+    display: grid;
+    grid-template-columns:1fr 1fr;
+    grid-auto-flow: dense;
         article{
-        &:first-child, &:nth-child(3){grid-row: span 2;}
-        &:nth-child(5){
-            grid-column: span 2;
-            h2{font-size: 3rem;}
+            &:first-child, &:nth-child(3){grid-row: span 2;}
+            &:nth-child(5){
+                grid-column: span 2;
+                h2{font-size: 3rem;}
+            }
+            &:first-child, &:nth-child(3){& .fototitulo{height: 600px;}}
+            .fototitulo{
+                position: relative;
+                display: block;
+                height:300px
             }
         }
     }
+    @media (max-width: 991px) and (min-width: 768px){// COMPORTAMIENTO TABLET
+        display: grid;
+        grid-template-columns:1fr 1fr;
+        grid-auto-flow: dense;
+        article:nth-child(5){grid-column: span 2;}
+        & article .fototitulo{
+            position: relative;
+            display: block;
+            height:250px;
+        }
+    }
+}
 
     ////////STOCK
-    .gridstock{
+.gridstock{
+    @media (min-width: 992px){// ASI SE COMPORTAN EN TAMAÑO GRANDE
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-template-rows: 300px;
         gap: 2px;
+        article{
+            .fototitulo{
+                position: relative;
+                display: block;
+                height:300px
+            }
+        }
     }
+    @media (max-width: 991px) and (min-width: 768px){// COMPORTAMIENTO TABLET
+        grid-template-rows: 250px;
+        & article .fototitulo{
+            position: relative;
+            display: block;
+            height:250px;
+        }
+    }
+}
 
     ///////MODELOS
-    .grid-showroom{
+
+.grid-showroom{ //ANIMACIONES EN LAS FOTOS
+    article .fototitulo{
+        overflow: hidden;
+        & > *{transition: all 500ms;}
+        &:hover{
+            img{
+                filter: brightness(1.5);
+                filter: contrast(0.5);
+                transform: scale(1.1);     
+            }
+            .box-tittle{transform: scale(1.1);}
+        }
+    }
+    @media (min-width: 992px){// ASI SE COMPORTAN EN TAMAÑO GRANDE
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         grid-template-rows: repeat(2, 300px) 350px 300px;
@@ -340,87 +395,42 @@ height: 500px;
                 grid-column: span 3;
                 h2{font-size: 3rem;}
             }
+            &:nth-child(2){ .fototitulo{height: 600px;}}
+            &:nth-child(5){ .fototitulo{height: 350px;}}
+            .fototitulo{
+                position: relative;
+                display: block;
+                height:300px
+            }    
         }
     }
-    
-    ///////COMUNES A LAS 3 ver con algo de programacion de SASS como meter todo junto! 
-
-    .grid-servicios, .grid-showroom, .gridstock{
-        & article .fototitulo{
-        position: relative;
-        display: block;
-        height:300px
-        }
-    }
-
-    .grid-servicios article, .grid-servicios article{
-        &:first-child, &:nth-child(3){& .fototitulo{height: 600px;}}         
-    }
-
-    .grid-showroom article{
-        &:nth-child(2){ .fototitulo{height: 600px;}}
-        &:nth-child(5){ .fototitulo{height: 350px;}}
-    }
-}
-
-@media (max-width: 991px) and (min-width: 768px){// COMPORTAMIENTO TABLET
-    /////////SERVICIOS
-    .grid-servicios{
-        display: grid;
-        grid-template-columns:1fr 1fr;
-        grid-auto-flow: dense;
-        article:nth-child(5){grid-column: span 2;}
-    }
-    ///////MODELOS
-    .grid-showroom{
+    @media (max-width: 991px) and (min-width: 768px){// COMPORTAMIENTO TABLET
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 2px;
         margin-top: 3rem;
         article{  //CAMBIO DE UBICACION EN GRILLA DE MODELOS
-            &:nth-child(1){
-                order: 4;
-                grid-column: span 1;
-            }            
-            &:nth-child(2){
-                order: 1;
-                grid-ROW: span 2;
-                .fototitulo{height: 500px;}
-            }
-            &:nth-child(3){
-                order: 2;
-                height: 250px; 
-            }
+            &:nth-child(1){order: 4; grid-column: span 1;}            
+            &:nth-child(2){order: 1;grid-ROW: span 2;
+                .fototitulo{height: 500px;}}
+            &:nth-child(3){order: 2;height: 250px;}
             &:nth-child(4){order: 7;}
-            &:nth-child(5){
-                order: 5;
-                grid-column: span 2;
-                .fototitulo{height: 300px;}
-            }
+            &:nth-child(5){order: 5;grid-column: span 2;
+                .fototitulo{height: 300px;}}
             &:nth-child(6){order: 6;}
-            &:nth-child(7){
-                order: 3;
-                grid-ROW: span 2;
-                .fototitulo{height: 500px;}
+            &:nth-child(7){order: 3;grid-ROW: span 2;
+                .fototitulo{height: 500px;}}
+            .fototitulo{
+                position: relative;
+                display: block;
+                height:250px;
             }
-        }
-    }
-
-
-    ///////STOCK
-    .gridstock{grid-template-rows: 250px;}
-
-    /////COMUNES A LAS 3
-    .grid-servicios,.grid-showroom, .gridstock{
-        & article .fototitulo{
-            position: relative;
-            display: block;
-            height:250px;
         }
     }
 }
 
-@media (max-width: 767px){//COMPORTAMIENTO MEDIANO - CHICO
+//COMPORTAMIENTO MEDIANO - CHICO PARA LAS 3 GRILLAS
+@media (max-width: 767px){
     //TODOS PASAN A SER FLEX COLUMN
     .grid-servicios, .grid-showroom, .gridstock{
         display: flex;
@@ -480,7 +490,7 @@ height: 500px;
 .grid-servicios article:nth-child(7) a{
     color: rgb(197, 197, 197);
     font-family: "roboto", sans-serif;
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     text-decoration: underline;
     cursor: pointer;
     font-weight: bold;
@@ -489,19 +499,6 @@ height: 500px;
     }
 }
 
-//ANIMACIONES EN LAS FOTOS
-.grid-showroom article .fototitulo{
-    overflow: hidden;
-    & > *{transition: all 500ms;}
-    &:hover{
-        img{
-            filter: brightness(1.5);
-            filter: contrast(0.5);
-            transform: scale(1.1);     
-        }
-        .box-tittle{transform: scale(1.1);}
-    }
-}
 
 ////// CONTACTO
 .formulario{
