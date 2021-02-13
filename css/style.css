@@ -5,7 +5,7 @@ p {
   font-family: "roboto", sans-serif;
   color: #c4c4c4; }
 
-.titulos-grandes, .slider-ppal #CarouselPpal .carousel-caption h1, .slider-ppal #CarouselPpal .carousel-caption h2, .servicios .servicios-texto h3 {
+.titulos-grandes, .slider-ppal #CarouselPpal .carousel-caption h1, .slider-ppal #CarouselPpal .carousel-caption h2, .servicios .servicios-texto h3, .titulos-secciones h1, .textos-ppales h3, .textos-ppales h2 {
   font-weight: bold;
   letter-spacing: 3px;
   font-size: 2rem;
@@ -26,6 +26,9 @@ p {
   .link-en-texto:hover, .testimonios a:hover {
     color: ivory;
     transform: scale(1.1); }
+
+.bordes-ppales, header, .portadas {
+  border-bottom: 2px solid ivory; }
 
 /*!
  * Bootstrap v4.5.3 (https://getbootstrap.com/)
@@ -7241,7 +7244,6 @@ body {
 
 header {
   background-color: rgba(27, 27, 27, 0.9);
-  border-bottom: 2px solid ivory;
   top: 0;
   left: 0;
   right: 0;
@@ -7254,7 +7256,6 @@ header {
     text-decoration: none;
     text-transform: uppercase;
     font-size: 1.5rem;
-    color: #c4c4c4;
     font-weight: bold; }
     header #navegacion .nav-item .nav-link:hover, header #navegacion .nav-item .navbar-text:hover {
       color: ivory;
@@ -7307,8 +7308,6 @@ header {
       animation-duration: 1.5s;
       padding: 1rem 0; }
     .slider-ppal #CarouselPpal .carousel-caption h1, .slider-ppal #CarouselPpal .carousel-caption h2 {
-      color: ivory;
-      letter-spacing: 3px;
       padding-left: 1rem; }
     .slider-ppal #CarouselPpal .carousel-caption p {
       padding: 0 2rem; }
@@ -7319,7 +7318,6 @@ header {
 
 .testimonios {
   background-color: #3b3b3b;
-  color: #c4c4c4;
   font-size: 1.2rem; }
   .testimonios .centrando-carousel {
     min-height: 400px; }
@@ -7366,7 +7364,6 @@ header {
     transform: translate3d(0, 0, 0); } }
 
 .portadas {
-  border-bottom: 2px solid white;
   height: 600px;
   object-fit: cover; }
   .portadas.d-block {
@@ -7374,22 +7371,14 @@ header {
 
 .titulos-secciones {
   background: #cfcfcf;
-  background: linear-gradient(65deg, #cfcfcf 13%, #9a9a9a 35%, #6d6d6d 52%, #4b4b4b 85%);
-  text-transform: uppercase;
-  color: #505050;
+  background: linear-gradient(65deg, #cfcfcf 13%, #9a9a9a 35%, #838383 70%, #636363 85%);
   padding: 0.5rem 0; }
   .titulos-secciones h1 {
-    font-weight: bold;
-    letter-spacing: 3px;
-    font-size: 2rem;
+    color: #5e5e5e;
     line-height: 3rem; }
 
 .textos-ppales h3, .textos-ppales h2 {
-  color: ivory;
-  font-size: 1.5rem;
-  font-weight: bold;
-  text-transform: uppercase;
-  letter-spacing: 2px; }
+  font-size: 1.5rem; }
 
 .textos-ppales p {
   font-size: 1.2rem; }

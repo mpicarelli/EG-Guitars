@@ -41,7 +41,7 @@ body{
 
 header{
     background-color: rgba($dark, 0.9);
-    border-bottom: 2px solid $primary;
+    @extend .bordes-ppales;
     top: 0;
     left: 0;
     right: 0;
@@ -53,10 +53,8 @@ header{
             text-decoration: none;
             text-transform: uppercase;
             font-size: $base-font-size * 1.5;
-            color: $secondary;
             font-weight: bold;
             &:hover{
-                color: $primary;
                 transform: scale(1.1);
             }
             &.active{color: $primary;}
@@ -119,8 +117,6 @@ height: 500px;
             }
             h1, h2{
                 @extend .titulos-grandes;
-                color: $primary;
-                letter-spacing: 3px;
                 padding-left: 1rem;
             }
             p{padding: 0 2rem;}
@@ -134,7 +130,6 @@ height: 500px;
 
 .testimonios{
     background-color: $all-bg;
-    color: $secondary;
     font-size: $base-font-size * 1.2;
     .centrando-carousel{min-height: 400px;}
     a{@extend .link-en-texto}
@@ -197,7 +192,7 @@ height: 500px;
 //////PORTADAS Y TEXTOS INICIALES
 
 .portadas{//imagenes de portada en algunas secciones
-    border-bottom: 2px solid white;
+    @extend .bordes-ppales;
     height: 600px;
     object-fit: cover;
     &.d-block{height: 500px;}
@@ -205,36 +200,22 @@ height: 500px;
 
 .titulos-secciones{ //titulo grande de las secciones excepto inicio
     background: rgb(207,207,207);
-    background: linear-gradient(65deg, rgba(207,207,207,1) 13%, rgba(154,154,154,1) 35%, rgba(109,109,109,1) 52%, rgba(75,75,75,1) 85%);
-    text-transform: uppercase;
-    color: rgb(80, 80, 80);
+    background: linear-gradient(65deg, rgba(207,207,207,1) 13%, rgba(154,154,154,1) 35%, rgb(131, 131, 131) 70%, rgb(99, 99, 99) 85%);
     padding: 0.5rem 0;
     h1{
-        font-weight: bold;
-        letter-spacing: 3px;
-        font-size: 2rem;
-        line-height: 3rem;
+        @extend .titulos-grandes;
+        color: darken($secondary , 40%);
+        line-height: $base-font-size * 3;
     }
 }
 
 .textos-ppales{//parrafos luego de la foto de portada
     h3, h2{
-    color:ivory;
-    font-size: 1.5rem;
-    font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 2px;
+        @extend .titulos-grandes;
+        font-size: $base-font-size * 1.5;
     }
-    p{
-    font-size: 1.2rem;
-        a{
-            font-size: inherit;
-            color: $secondary;
-            font-family: "roboto", sans-serif; 
-            text-decoration: underline;
-            font-weight: bold;
-            &:hover{color: $primary;}
-        }
+    p{font-size: 1.2rem;
+        a{@extend .links-en-texto;}
     }
     .firma{//FIRMA EN  DESCRIPCION DE TALLER - PAGINA SERVICIOS
         font-family: "oswald",sans-serif;
@@ -255,16 +236,12 @@ height: 500px;
     height: 300px;
     padding: 2px;
     @include hastamobile{height: 250px;}
-    img{
-        object-fit: cover;
-        width: 100%;
-        height: 100%;
-    }
+    img{ @extend .img-specs};
 }
 
 //SECCIONES SERVICIOS, MODELOS Y STOCK
 
-    //////SERVICIOS
+//////SERVICIOS
 .grid-servicios{
     @include desdenotebook{// ASI SE COMPORTAN EN TAMAÑO GRANDE
     display: grid;
@@ -444,11 +421,7 @@ height: 500px;
         top: 0;
         padding: 1rem;
         }
-        & .fototitulo img{
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
+        & .fototitulo img{ @extend .img-specs;}
     }
     p{
         font-size: 1rem;
