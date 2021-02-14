@@ -249,61 +249,36 @@ height: 500px;
 //////SERVICIOS
 .grid-servicios{
     @include desdenotebook{// ASI SE COMPORTAN EN TAMAÑO GRANDE
-    display: grid;
-    grid-template-columns:1fr 1fr;
-    grid-auto-flow: dense;
+    @include grilla-base(1fr 1fr, 0px);
         article{
             &:first-child, &:nth-child(3){grid-row: span 2;}
             &:nth-child(5){
                 grid-column: span 2;
-                h2{font-size: 3rem;}
+                h2{font-size: $base-font-size * 3;}
             }
+            .img-wrapper{@include img-aux(300px);}
             &:first-child, &:nth-child(3){& .img-wrapper{height: 600px;}}
-            .img-wrapper{
-                position: relative;
-                display: block;
-                height:300px
-            }
         }
     }
-    @include desdetablet{// COMPORTAMIENTO TABLET
-        display: grid;
-        grid-template-columns:1fr 1fr;
-        grid-auto-flow: dense;
+    @include hastanotebook{// COMPORTAMIENTO TABLET
+        @include grilla-base(1fr 1fr, 0px);
         article:nth-child(5){grid-column: span 2;}
-        & article .img-wrapper{
-            position: relative;
-            display: block;
-            height:250px;
-        }
+        & article .img-wrapper{@include img-aux(250px);}
     }
 }
 
     ////////STOCK
+
 .gridstock{
     @include desdenotebook{// ASI SE COMPORTAN EN TAMAÑO GRANDE
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 300px;
-        gap: 2px;
-        article{
-            .img-wrapper{
-                position: relative;
-                display: block;
-                height:300px
-            }
-        }
+        @include grilla-base (1fr 1fr, 2px);
+            article{.img-wrapper{@include img-aux(300px);}}
     }
-    @include desdetablet{// COMPORTAMIENTO TABLET
-        grid-template-rows: 250px;
-        & article .img-wrapper{
-            position: relative;
-            display: block;
-            height:250px;
-        }
+    @include hastanotebook{// COMPORTAMIENTO TABLET
+        @include grilla-base (1fr 1fr, 2px);
+            article{.img-wrapper{@include img-aux(250px);}}
     }
 }
-
     ///////MODELOS
 
 .grid-modelos{ 
@@ -320,12 +295,8 @@ height: 500px;
         }
     }
     @include desdenotebook{// ASI SE COMPORTAN EN TAMAÑO GRANDE
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        @include grilla-base(1fr 1fr 1fr, 2px);
         grid-template-rows: repeat(2, 300px) 350px 300px;
-        grid-auto-flow: dense;
-        margin-top: 3rem;
-        gap: 2px;
         article{
             &:first-child, &:nth-child(7){grid-column: span 2;}
             &:nth-child(2){grid-row: span 2;}
@@ -335,18 +306,11 @@ height: 500px;
             }
             &:nth-child(2){ .img-wrapper{height: 600px;}}
             &:nth-child(5){ .img-wrapper{height: 350px;}}
-            .img-wrapper{
-                position: relative;
-                display: block;
-                height:300px
-            }    
+            .img-wrapper{@include img-aux(300px);}    
         }
     }
     @include hastanotebook{// COMPORTAMIENTO TABLET
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 2px;
-        margin-top: 3rem;
+        @include grilla-base(1fr 1fr, 2px);
         article{  //CAMBIO DE UBICACION EN GRILLA DE MODELOS
             &:nth-child(1){order: 4; grid-column: span 1;}            
             &:nth-child(2){order: 1;grid-row: span 2;
@@ -357,57 +321,30 @@ height: 500px;
             &:nth-child(6){order: 6;}
             &:nth-child(7){order: 3;grid-row: span 2;
                 .img-wrapper{height: 500px;}}
-            .img-wrapper{
-                position: relative;
-                display: block;
-                height:250px;
-            }
+            .img-wrapper{@include img-aux(250px);}
         }
     }
     @include hastatablet{//comportamiento mediano/chico
-        display: flex;
-        flex-direction: column;
-        & article {
-            .img-wrapper{
-            position: relative;
-            display: block;
-            height:300px
-            }
-            &:nth-child(2), &:nth-child(7){//los de arriba eran mas especificos
-                & .img-wrapper{height: 300px}
-            }
-            & h2{font-size: 2rem;}
-        }
+        @include grilla-to-flex;
+            article{
+                //tuve que rearmar selectores para pisar los de tamañ desde tablet
+                &:nth-child(2), &:nth-child(7){
+                    & .img-wrapper{height: 300px}
+                }
+            } 
     }
 }
 
-//COMPORTAMIENTO MEDIANO - CHICO PARA LAS servicios y stock GRILLAS
+//COMPORTAMIENTO MEDIANO - CHICO PARA LAS GRILLAS SERVICIOS Y STOCK - SE TRANSFORMAN EN FLEX
 @include hastatablet{
-    //TODOS PASAN A SER FLEX COLUMN
     .grid-servicios, .gridstock{
-        display: flex;
-        flex-direction: column;
-        & article {
-        .img-wrapper{
-            position: relative;
-            display: block;
-            height:300px
-        }
-        h2{font-size: 2rem;}
-        }
+        @include grilla-to-flex;
     }
 }
 
 
 //ACOMODANDO LAS FOTOS Y LOS TITULOS DE LAS FOTOS
 .grid-servicios, .grid-modelos, .gridstock{
-    & h2{
-        color: $primary;
-        @extend .titulos-grandes;
-        text-shadow: 2px 1px 1px black;
-        padding: 0.5rem;
-        background-color: rgba($dark, 0.25);
-    }
     & article{
         display:flex;
         flex-direction: column;
@@ -415,20 +352,19 @@ height: 500px;
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 1rem;
             @extend .centrador;
         }
         & .img-wrapper img{ @extend .img-specs;}
     }
-    p{
-        font-size: 1rem;
-        text-align: justify;
-        padding: 0.5rem 1rem;
-        flex-shrink: 1;
+    & h2{
+        color: $primary;
+        @extend .titulos-grandes;
+        text-shadow: 2px 2px 2px $dark;
+        background-color: rgba($dark, 0.25);
     }
 }
 
-//RESALTANDO LOS LINKS
+//RESALTANDO LINK EN SERVICIOS
 .grid-servicios article:nth-child(7) a{@extend .link-en-texto;}
 
 
@@ -447,7 +383,6 @@ height: 500px;
         @extend .titulos-grandes;
         font-size: $base-font-size * 1.2;
         letter-spacing: 1px;
-        text-transform: uppercase;
         padding: 5px 10px;
         &:hover{
             transform: scale(1.15);

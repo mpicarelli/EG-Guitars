@@ -7227,7 +7227,7 @@ body {
   padding-bottom: 67px;
   position: relative;
   min-height: 100vh; }
-  @media (max-width: 576px) {
+  @media (max-width: 575px) {
     body {
       padding-bottom: 121px; } }
   body .arriba {
@@ -7411,7 +7411,7 @@ header {
   width: 50%;
   height: 300px;
   padding: 2px; }
-  @media (max-width: 576px) {
+  @media (max-width: 575px) {
     .fotos-mics > * {
       height: 250px; } }
 
@@ -7419,25 +7419,27 @@ header {
   .grid-servicios {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-auto-flow: dense; }
+    grid-auto-flow: dense;
+    gap: 0px; }
     .grid-servicios article:first-child, .grid-servicios article:nth-child(3) {
       grid-row: span 2; }
     .grid-servicios article:nth-child(5) {
       grid-column: span 2; }
       .grid-servicios article:nth-child(5) h2 {
         font-size: 3rem; }
-    .grid-servicios article:first-child .img-wrapper, .grid-servicios article:nth-child(3) .img-wrapper {
-      height: 600px; }
     .grid-servicios article .img-wrapper {
       position: relative;
       display: block;
-      height: 300px; } }
+      height: 300px; }
+    .grid-servicios article:first-child .img-wrapper, .grid-servicios article:nth-child(3) .img-wrapper {
+      height: 600px; } }
 
-@media (min-width: 768px) {
+@media (max-width: 991px) {
   .grid-servicios {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-auto-flow: dense; }
+    grid-auto-flow: dense;
+    gap: 0px; }
     .grid-servicios article:nth-child(5) {
       grid-column: span 2; }
     .grid-servicios article .img-wrapper {
@@ -7449,16 +7451,19 @@ header {
   .gridstock {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 300px;
+    grid-auto-flow: dense;
     gap: 2px; }
     .gridstock article .img-wrapper {
       position: relative;
       display: block;
       height: 300px; } }
 
-@media (min-width: 768px) {
+@media (max-width: 991px) {
   .gridstock {
-    grid-template-rows: 250px; }
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-flow: dense;
+    gap: 2px; }
     .gridstock article .img-wrapper {
       position: relative;
       display: block;
@@ -7478,11 +7483,10 @@ header {
 @media (min-width: 992px) {
   .grid-modelos {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, 300px) 350px 300px;
+    grid-template-columns: 1fr 1fr 1fr;
     grid-auto-flow: dense;
-    margin-top: 3rem;
-    gap: 2px; }
+    gap: 2px;
+    grid-template-rows: repeat(2, 300px) 350px 300px; }
     .grid-modelos article:first-child, .grid-modelos article:nth-child(7) {
       grid-column: span 2; }
     .grid-modelos article:nth-child(2) {
@@ -7503,9 +7507,9 @@ header {
 @media (max-width: 991px) {
   .grid-modelos {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2px;
-    margin-top: 3rem; }
+    grid-template-columns: 1fr 1fr;
+    grid-auto-flow: dense;
+    gap: 2px; }
     .grid-modelos article:nth-child(1) {
       order: 4;
       grid-column: span 1; }
@@ -7542,9 +7546,7 @@ header {
       display: block;
       height: 300px; }
     .grid-modelos article:nth-child(2) .img-wrapper, .grid-modelos article:nth-child(7) .img-wrapper {
-      height: 300px; }
-    .grid-modelos article h2 {
-      font-size: 2rem; } }
+      height: 300px; } }
 
 @media (max-width: 767px) {
   .grid-servicios, .gridstock {
@@ -7553,15 +7555,7 @@ header {
     .grid-servicios article .img-wrapper, .gridstock article .img-wrapper {
       position: relative;
       display: block;
-      height: 300px; }
-    .grid-servicios article h2, .gridstock article h2 {
-      font-size: 2rem; } }
-
-.grid-servicios h2, .grid-modelos h2, .gridstock h2 {
-  color: ivory;
-  text-shadow: 2px 1px 1px black;
-  padding: 0.5rem;
-  background-color: rgba(27, 27, 27, 0.25); }
+      height: 300px; } }
 
 .grid-servicios article, .grid-modelos article, .gridstock article {
   display: flex;
@@ -7569,14 +7563,12 @@ header {
   .grid-servicios article .box-title, .grid-modelos article .box-title, .gridstock article .box-title {
     display: flex;
     align-items: center;
-    justify-content: center;
-    padding: 1rem; }
+    justify-content: center; }
 
-.grid-servicios p, .grid-modelos p, .gridstock p {
-  font-size: 1rem;
-  text-align: justify;
-  padding: 0.5rem 1rem;
-  flex-shrink: 1; }
+.grid-servicios h2, .grid-modelos h2, .gridstock h2 {
+  color: ivory;
+  text-shadow: 2px 2px 2px #1b1b1b;
+  background-color: rgba(27, 27, 27, 0.25); }
 
 @media (min-width: 768px) {
   .formulario {
@@ -7604,7 +7596,6 @@ header {
   border: none;
   font-size: 1.2rem;
   letter-spacing: 1px;
-  text-transform: uppercase;
   padding: 5px 10px; }
   .formulario .boton:hover {
     transform: scale(1.15);
