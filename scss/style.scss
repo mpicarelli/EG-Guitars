@@ -1,18 +1,18 @@
 //COLORES
-$texto-blanco:    ivory;
-$texto-gris:      rgb(196, 196, 196);
-$dark:            rgb(27, 27, 27);
-$all-bg:          rgb(59, 59, 59);
+$texto-blanco:         ivory;
+$texto-gris:           rgb(196, 196, 196);
+$dark:                 rgb(27, 27, 27);
+$all-bg:               rgb(59, 59, 59);
 
 $colors:(
-"texto-blanco":    $texto-blanco,
-"texto-gris":      $texto-gris,
-"dark":            $dark,
+"texto-blanco":          $texto-blanco,
+"texto-gris":            $texto-gris,
+"dark":                  $dark,
 );
 
-$primary:          $texto-blanco;
-$secondary:        $texto-gris;
-$dark:             $dark;
+$primary:                $texto-blanco;
+$secondary:              $texto-gris;
+$dark:                   $dark;
 
 
  //LINKS
@@ -21,31 +21,20 @@ $link-decoration:        underline;
 $link-hover-color:       $primary;
 $link-hover-decoration:  underline;
 
-//TAMAÑO DE FUENTE
-$base-font-size: 1rem;
-
 //MEDIA QUERYs
-@mixin hastanotebook {@media(max-width:991px){@content}};
-@mixin desdenotebook {@media(min-width:992px){@content}};
-@mixin hastatablet   {@media(max-width:767px){@content}};
-@mixin desdetablet   {@media(min-width:768px){@content}};
-@mixin hastamobile   {@media(max-width:576px){@content}};
+@mixin hastanotebook     {@media(max-width:991px){@content}};
+@mixin desdenotebook     {@media(min-width:992px){@content}};
+@mixin hastatablet       {@media(max-width:767px){@content}};
+@mixin desdetablet       {@media(min-width:768px){@content}};
+@mixin hastamobile       {@media(max-width:576px){@content}};
 
 //SIZES EXTRA
-$sizes: (
-    90: 90%,
-    70: 70%
-);
+$sizes: (90: 90%, 70: 70%);
 
 //FUENTES
-h1, h2, h3, h4, a, nav span{
-    font-family: "OSWALD", sans-serif;
-}
-
-p{
-    font-family: "roboto", sans-serif;
-    //color: $secondary;
-}
+h1, h2, h3, h4, a, nav span {font-family: "OSWALD", sans-serif;}
+p                           {font-family: "roboto", sans-serif;}
+$base-font-size: 1rem;
 
 // EXTENDS
 .titulos-grandes{
@@ -65,18 +54,17 @@ p{
 
 .link-en-texto{
     font-family: "roboto", sans-serif;
-        font-size: $base-font-size * 1.2;
-        text-decoration: none;
-        font-weight: bold;
-        &:hover{
-            color: $primary;
-            transform: scale(1.1);
-        }
+    font-size: $base-font-size * 1.2;
+    text-decoration: none;
+    font-weight: bold;
+    font-style: italic;
+    &:hover{
+        color: $primary;
+        transform: scale(1.1);
+    }
 }
 
-.bordes-ppales{
-    border-bottom: 2px solid $primary;
-}
+.bordes-ppales{border-bottom: 2px solid $primary;}
 
 .img-specs{
     object-fit: cover;
@@ -84,5 +72,6 @@ p{
     height: 100%;
 }
 
+//ARCHIVOS IMPORTADOS
 @import "bootstrap/bootstrap.scss";
 @import "estilos-mp.scss";

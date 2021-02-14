@@ -2,10 +2,9 @@ h1, h2, h3, h4, a, nav span {
   font-family: "OSWALD", sans-serif; }
 
 p {
-  font-family: "roboto", sans-serif;
-  color: #c4c4c4; }
+  font-family: "roboto", sans-serif; }
 
-.titulos-grandes, .slider-ppal #CarouselPpal .carousel-caption h1, .slider-ppal #CarouselPpal .carousel-caption h2, .servicios .servicios-texto h3, .titulos-secciones h1, .textos-ppales h3, .textos-ppales h2 {
+.titulos-grandes, .slider-ppal #CarouselPpal .carousel-caption h1, .slider-ppal #CarouselPpal .carousel-caption h2, .servicios .servicios-texto h3, .titulos-secciones h1, .textos-ppales h2, .textos-ppales h3 {
   font-weight: bold;
   letter-spacing: 3px;
   font-size: 2rem;
@@ -18,17 +17,23 @@ p {
   right: 0;
   top: 0; }
 
-.link-en-texto, .testimonios a {
+.link-en-texto, .testimonios a, .textos-ppales p a {
   font-family: "roboto", sans-serif;
   font-size: 1.2rem;
   text-decoration: none;
-  font-weight: bold; }
-  .link-en-texto:hover, .testimonios a:hover {
+  font-weight: bold;
+  font-style: italic; }
+  .link-en-texto:hover, .testimonios a:hover, .textos-ppales p a:hover {
     color: ivory;
     transform: scale(1.1); }
 
 .bordes-ppales, header, .portadas {
   border-bottom: 2px solid ivory; }
+
+.img-specs, .fotos-mics > * img, .grid-servicios article .img-wrapper img, .grid-showroom article .img-wrapper img, .gridstock article .img-wrapper img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%; }
 
 /*!
  * Bootstrap v4.5.3 (https://getbootstrap.com/)
@@ -7258,8 +7263,8 @@ header {
     font-size: 1.5rem;
     font-weight: bold; }
     header #navegacion .nav-item .nav-link:hover, header #navegacion .nav-item .navbar-text:hover {
-      color: ivory;
-      transform: scale(1.1); }
+      transform: scale(1.1);
+      color: ivory; }
     header #navegacion .nav-item .nav-link.active, header #navegacion .nav-item .navbar-text.active {
       color: ivory; }
   header .dropdown-menu.midropmenu {
@@ -7377,19 +7382,14 @@ header {
     color: #5e5e5e;
     line-height: 3rem; }
 
-.textos-ppales h3, .textos-ppales h2 {
+.textos-ppales h2 {
+  font-size: 1.8rem; }
+
+.textos-ppales h3 {
   font-size: 1.5rem; }
 
 .textos-ppales p {
   font-size: 1.2rem; }
-  .textos-ppales p a {
-    font-size: inherit;
-    color: #c4c4c4;
-    font-family: "roboto", sans-serif;
-    text-decoration: underline;
-    font-weight: bold; }
-    .textos-ppales p a:hover {
-      color: ivory; }
 
 .textos-ppales .firma {
   font-family: "oswald",sans-serif;
@@ -7407,10 +7407,6 @@ header {
   @media (max-width: 576px) {
     .fotos-mics > * {
       height: 250px; } }
-  .fotos-mics > * img {
-    object-fit: cover;
-    width: 100%;
-    height: 100%; }
 
 @media (min-width: 992px) {
   .grid-servicios {
@@ -7423,9 +7419,9 @@ header {
       grid-column: span 2; }
       .grid-servicios article:nth-child(5) h2 {
         font-size: 3rem; }
-    .grid-servicios article:first-child .fototitulo, .grid-servicios article:nth-child(3) .fototitulo {
+    .grid-servicios article:first-child .img-wrapper, .grid-servicios article:nth-child(3) .img-wrapper {
       height: 600px; }
-    .grid-servicios article .fototitulo {
+    .grid-servicios article .img-wrapper {
       position: relative;
       display: block;
       height: 300px; } }
@@ -7437,7 +7433,7 @@ header {
     grid-auto-flow: dense; }
     .grid-servicios article:nth-child(5) {
       grid-column: span 2; }
-    .grid-servicios article .fototitulo {
+    .grid-servicios article .img-wrapper {
       position: relative;
       display: block;
       height: 250px; } }
@@ -7448,7 +7444,7 @@ header {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 300px;
     gap: 2px; }
-    .gridstock article .fototitulo {
+    .gridstock article .img-wrapper {
       position: relative;
       display: block;
       height: 300px; } }
@@ -7456,20 +7452,20 @@ header {
 @media (min-width: 768px) {
   .gridstock {
     grid-template-rows: 250px; }
-    .gridstock article .fototitulo {
+    .gridstock article .img-wrapper {
       position: relative;
       display: block;
       height: 250px; } }
 
-.grid-showroom article .fototitulo {
+.grid-showroom article .img-wrapper {
   overflow: hidden; }
-  .grid-showroom article .fototitulo > * {
+  .grid-showroom article .img-wrapper > * {
     transition: all 500ms; }
-  .grid-showroom article .fototitulo:hover img {
+  .grid-showroom article .img-wrapper:hover img {
     filter: brightness(1.5);
     filter: contrast(0.5);
     transform: scale(1.1); }
-  .grid-showroom article .fototitulo:hover .box-tittle {
+  .grid-showroom article .img-wrapper:hover .box-title {
     transform: scale(1.1); }
 
 @media (min-width: 992px) {
@@ -7488,11 +7484,11 @@ header {
       grid-column: span 3; }
       .grid-showroom article:nth-child(5) h2 {
         font-size: 3rem; }
-    .grid-showroom article:nth-child(2) .fototitulo {
+    .grid-showroom article:nth-child(2) .img-wrapper {
       height: 600px; }
-    .grid-showroom article:nth-child(5) .fototitulo {
+    .grid-showroom article:nth-child(5) .img-wrapper {
       height: 350px; }
-    .grid-showroom article .fototitulo {
+    .grid-showroom article .img-wrapper {
       position: relative;
       display: block;
       height: 300px; } }
@@ -7509,7 +7505,7 @@ header {
     .grid-showroom article:nth-child(2) {
       order: 1;
       grid-row: span 2; }
-      .grid-showroom article:nth-child(2) .fototitulo {
+      .grid-showroom article:nth-child(2) .img-wrapper {
         height: 500px; }
     .grid-showroom article:nth-child(3) {
       order: 2; }
@@ -7518,16 +7514,16 @@ header {
     .grid-showroom article:nth-child(5) {
       order: 5;
       grid-column: span 2; }
-      .grid-showroom article:nth-child(5) .fototitulo {
+      .grid-showroom article:nth-child(5) .img-wrapper {
         height: 300px; }
     .grid-showroom article:nth-child(6) {
       order: 6; }
     .grid-showroom article:nth-child(7) {
       order: 3;
       grid-row: span 2; }
-      .grid-showroom article:nth-child(7) .fototitulo {
+      .grid-showroom article:nth-child(7) .img-wrapper {
         height: 500px; }
-    .grid-showroom article .fototitulo {
+    .grid-showroom article .img-wrapper {
       position: relative;
       display: block;
       height: 250px; } }
@@ -7536,11 +7532,11 @@ header {
   .grid-showroom {
     display: flex;
     flex-direction: column; }
-    .grid-showroom article .fototitulo {
+    .grid-showroom article .img-wrapper {
       position: relative;
       display: block;
       height: 300px; }
-    .grid-showroom article:nth-child(2) .fototitulo, .grid-showroom article:nth-child(7) .fototitulo {
+    .grid-showroom article:nth-child(2) .img-wrapper, .grid-showroom article:nth-child(7) .img-wrapper {
       height: 300px; }
     .grid-showroom article h2 {
       font-size: 2rem; } }
@@ -7549,7 +7545,7 @@ header {
   .grid-servicios, .gridstock {
     display: flex;
     flex-direction: column; }
-    .grid-servicios article .fototitulo, .gridstock article .fototitulo {
+    .grid-servicios article .img-wrapper, .gridstock article .img-wrapper {
       position: relative;
       display: block;
       height: 300px; }
@@ -7569,7 +7565,7 @@ header {
 .grid-servicios article, .grid-showroom article, .gridstock article {
   display: flex;
   flex-direction: column; }
-  .grid-servicios article .box-tittle, .grid-showroom article .box-tittle, .gridstock article .box-tittle {
+  .grid-servicios article .box-title, .grid-showroom article .box-title, .gridstock article .box-title {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -7579,10 +7575,6 @@ header {
     right: 0;
     top: 0;
     padding: 1rem; }
-  .grid-servicios article .fototitulo img, .grid-showroom article .fototitulo img, .gridstock article .fototitulo img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; }
 
 .grid-servicios p, .grid-showroom p, .gridstock p {
   font-size: 1rem;
@@ -7640,28 +7632,21 @@ header {
     background-color: ivory; }
 
 footer {
-  background-color: black;
+  background-color: #1b1b1b;
   position: absolute;
   bottom: 0; }
-  footer p, footer a, footer h3 {
+  footer p, footer h3 {
     color: ivory;
-    text-decoration: none;
     font-size: 1rem; }
-  footer .logos a:hover {
-    /*bootsrap me agregaba hover a los "a" que cubren los iconos, los mato con esto*/
-    opacity: 1;
-    text-decoration: none;
-    color: ivory; }
+  footer .logos a {
+    text-decoration: none; }
   footer .logos .insta, footer .logos .face, footer .logos .yt {
-    opacity: 0.65;
     font-size: 1.8rem;
     letter-spacing: 7px; }
     footer .logos .insta:hover, footer .logos .face:hover, footer .logos .yt:hover {
-      opacity: 1;
-      transform: scale(1.2);
       text-decoration: none;
-      color: ivory; }
+      transform: scale(1.2);
+      text-decoration: none; }
   footer span {
     color: red;
-    font-weight: bold;
-    padding-left: 4px; }
+    font-weight: bold; }
