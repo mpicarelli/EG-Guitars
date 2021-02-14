@@ -1,39 +1,39 @@
 ///////GENERALES
 body{
-    background-image: url(../imagenes/grunge-wall-texture.jpg);
-    background-position: top left;
+    background-image:      url(../imagenes/grunge-wall-texture.jpg);
+    background-position:   top left;
     background-attachment: fixed;
     //llevar footer abajo de todo en la pagina
-    padding-bottom: 67px;
-    position: relative;
-    min-height: 100vh;
-    @include hastamobile{//adaptado a tamaños chicos que el footer se hace mas alto
-        padding-bottom: 121px;
-    }
+    padding-bottom:        67px;
+    position:              relative;
+    min-height:            100vh;
+    //adaptado a tamaños chicos que el footer se hace mas alto
+    @include hastamobile   {padding-bottom: 121px;}
     .arriba{ //chevrom llevame arriba
-        display: inline-block;
-        color: $primary;
-        text-decoration: none;
-        position: absolute;
-        bottom: 125px;
-        right: 20px;
-        font-size: $base-font-size * 1.5;
-        line-height: $base-font-size * 2;
-        padding: 5px 10px 10px 10px;
-        background-color: rgba($secondary, 0.25);
-        border-radius: 15%;
-        &:hover{opacity: 1;
+        display:           inline-block;
+        color:             $primary;
+        text-decoration:   none;
+        position:          absolute;
+        bottom:            125px;
+        right:             20px;
+        font-size:         $base-font-size * 1.5;
+        line-height:       $base-font-size * 2;
+        padding:           5px 10px 10px 10px;
+        background-color:  rgba($secondary, 0.25);
+        border-radius:     15%;
+        &:hover{opacity:          1;
                 background-color: $dark
         }
     }
 }
 
-
-.todofondo{//le da una capa gris traslucida asi no se nota mucho el fondo
+//capa gris traslucida detras del contenido
+.todofondo{
     background-color: rgba($all-bg, 0.5);
-    min-height: 75vh;
+    min-height:       75vh;
 }
 
+//flecha arriba me lleva al tope de la pagina
 #arriba{position:absolute; top: 0px;}
 
 
@@ -42,36 +42,38 @@ body{
 header{
     background-color: rgba($dark, 0.9);
     @extend .bordes-ppales;
-    top: 0;
-    left: 0;
-    right: 0;
+    top:      0;
+    left:     0;
+    right:    0;
     position: sticky;
-    z-index: 10;
+    z-index:  10;
     #navegacion .nav-item {
-        @include desdetablet {height: 110px};
         .nav-link, .navbar-text{
             text-decoration: none;
-            text-transform: uppercase;
-            font-size: $base-font-size * 1.5;
-            font-weight: bold;
+            text-transform:  uppercase;
+            font-size:       $base-font-size * 1.5;
+            font-weight:     bold;
             &:hover{
-                transform: scale(1.1);
-                color: $primary;
+                transform:  scale(1.1);
+                color:      $primary;
             }
             &.active{color: $primary;}
+        }
+        @include desdetablet{
+            height: 110px;
         }
     }
     .dropdown-menu.midropmenu{
         background-color: rgba($dark, 0.9);
-        border-top: 4px solid $primary;
-        text-transform: uppercase;
+        border-top:       4px solid $primary;
+        text-transform:   uppercase;
         .dropdown-item.midropitem{
-            font-size: $base-font-size * 1.35;
-            color: $secondary;
+            font-size:   $base-font-size * 1.35;
+            color:       $secondary;
             font-weight: bold;
             &:hover{
-                color:$primary;
-                transform: scale(1.1);
+                color:            $primary;
+                transform:        scale(1.1);
                 background-color: transparent;
             }
         }
@@ -82,57 +84,56 @@ header{
 ////////INDEX
 
 
-.slider-ppal{//slider principal de altura constante
-height: 500px;
+.slider-ppal{
+    //slider principal de altura constante
+    height:             500px;
     #CarouselPpal {
         .carousel-img img{
-        object-fit: cover; 
-        height: 500px; 
+            object-fit: cover; 
+            height:     500px; 
         }
         .carousel-flecha{
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            margin: auto;
-            height: 50px;
-            width: 50px;  
-            line-height: 50px;
-            font-size: $base-font-size * 2;
-            display: block;
-            z-index: 10;
-            text-align: center;
-            &.prev{left: 2%;}
+            position:     absolute;
+            top:          0;
+            bottom:       0;
+            margin:       auto;
+            height:       50px;
+            width:        50px;  
+            line-height:  50px;
+            font-size:    $base-font-size * 2;
+            display:      block;
+            z-index:      10;
+            text-align:   center;
+            &.prev{left:  2%;}
             &.next{right: 2%;}
         }
         .carousel-caption{
-            position: absolute;
-            top: 0;
-            bottom: 0;
+            position:        absolute;
+            top:             0;
+            bottom:          0;
             text-decoration: none;
-            div{
-                background-color: rgba($dark, 0.8);
-                animation-name: fadeInUp;
-                animation-delay: 0s;
+            div {//animacion del caption
+                background-color:   rgba($dark, 0.8);
+                animation-name:     fadeInUp;
+                animation-delay:    0s;
                 animation-duration: 1.5s;
-                padding: 1rem 0;
+                h1, h2{@extend      .titulos-grandes;}
+                p     {padding:     0 2rem;}
             }
-            h1, h2{
-                @extend .titulos-grandes;
-                padding-left: 1rem;
-            }
-            p{padding: 0 2rem;}
         }
         a.carousel-caption{
-            &:hover{transform: scale(1.1);}
-            p{&:hover{color: $primary;}}
+            &:hover  {transform: scale(1.1);}
+            p{&:hover{color:     $primary;}}
         }
     }
 }
 
 .testimonios{
     background-color: $all-bg;
-    font-size: $base-font-size * 1.2;
-    .centrando-carousel{min-height: 400px;}
+    font-size:        $base-font-size * 1.2;
+    .centrando-carousel{
+        min-height: 400px;
+    }
     a{@extend .link-en-texto}
 }
 
@@ -140,227 +141,243 @@ height: 500px;
     img{object-fit: cover;}
     .servicios-texto{
         @extend .centrador;
-        text-decoration: none;
+        text-decoration:      none;
         h3, p{
             background-color: rgba($dark, 0.8);
-            color: $secondary;
-            padding: 1rem;
-            font-size: $base-font-size * 1.2;
+            color:            $secondary;
+            padding:          1rem;
+            font-size:        $base-font-size * 1.2;
         }
         h3{
             @extend .titulos-grandes;
-            font-size: $base-font-size * 1.5;
-            letter-spacing: 2px;
+            font-size:        $base-font-size * 1.5;
+            letter-spacing:   2px;
         }
         &:hover{
-            text-decoration: none;
+            text-decoration:  none;
             h3,p{
-                transform: scale(1.1);
-                color: $primary;
+                transform:    scale(1.1);
+                color:        $primary;
             }
         }
     }
 }
 
-
-.videohome {//video al final del index
-    position: relative;
+//video al final del index
+.videohome {
+    position:       relative;
     padding-bottom: 56.25%;
-    height: 0;
-    overflow: hidden;
+    height:         0;
+    overflow:       hidden;
     iframe {
-        position: absolute;
-        top:0;
-        left: 0;
-        width: 100%;
-        height: 100%;
+        position:   absolute;
+        top:        0;
+        left:       0;
+        width:      100%;
+        height:     100%;
     }
 }
 
-@keyframes fadeInUp {//animacion para los slides
+//animacion para los slides
+@keyframes fadeInUp {
     from {
-    opacity: 0;
+    opacity:           0;
     -webkit-transform: translate3d(0, 100%, 0);
-    transform: translate3d(0, 100%, 0);
+    transform:         translate3d(0, 100%, 0);
     }
     to {
     opacity: 1;
     -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
+    transform:         translate3d(0, 0, 0);
     }
 }
 
 //////PORTADAS Y TEXTOS INICIALES
 
-.portadas{//imagenes de portada en algunas secciones
-    @extend .bordes-ppales;
-    height: 600px;
-    object-fit: cover;
+//imagenes de portada en algunas secciones
+.portadas{
+    @extend           .bordes-ppales;
+    height:           600px;
+    object-fit:       cover;
     &.d-block{height: 500px;}
 }
 
-.titulos-secciones{ //titulo grande de las secciones excepto inicio
+//titulo grande de las secciones excepto inicio
+.titulos-secciones{ 
     background: rgb(207,207,207);
     background: linear-gradient(65deg, rgba(207,207,207,1) 13%, rgba(154,154,154,1) 35%, rgb(131, 131, 131) 70%, rgb(99, 99, 99) 85%);
-    padding: 0.5rem 0;
+    padding:    0.5rem 0;
     h1{
-        @extend .titulos-grandes;
-        color: darken($secondary , 40%);
+        @extend      .titulos-grandes;
+        color:       darken($secondary , 40%);
         line-height: $base-font-size * 3;
     }
 }
 
-.textos-ppales{//parrafos luego de la foto de portada
+//parrafos luego de la foto de portada
+.textos-ppales{
     h2{
-        @extend .titulos-grandes;
+        @extend    .titulos-grandes;
         font-size: $base-font-size * 1.8;
     }
     h3{
-        @extend .titulos-grandes;
+        @extend    .titulos-grandes;
         font-size: $base-font-size * 1.5;
     }
-    p{font-size: 1.2rem;
-        a{@extend .link-en-texto;}
+    p{font-size:   1.2rem;
+        a{@extend  .link-en-texto;}
     }
     .firma{//FIRMA EN  DESCRIPCION DE TALLER - PAGINA SERVICIOS
-        font-family: "oswald",sans-serif;
-        font-weight: bold;
-        font-size: 1.3rem;
-        color: $primary;
-        text-align: left;
-        padding: 1rem;
+        font-family:    "oswald",sans-serif;
+        font-weight:    bold;
+        font-size:      1.3rem;
+        color:          $primary;
+        text-align:     left;
+        padding:        1rem;
         text-transform: uppercase; 
     }
 }
 
-
 /////// SECCION EG PICKUPS
-
 .fotos-mics > *{
-    width: 50%;
-    height: 300px;
-    padding: 2px;
+    width:                       50%;
+    height:                      300px;
+    padding:                     2px;
     @include hastamobile{height: 250px;}
-    img{ @extend .img-specs};
+    img{
+        @extend .img-specs;
+    }
 }
 
 //SECCIONES SERVICIOS, MODELOS Y STOCK
 
 //////SERVICIOS
 .grid-servicios{
-    @include desdenotebook{// ASI SE COMPORTAN EN TAMAÑO GRANDE
-    @include grilla-base(1fr 1fr, 0px);
+    // ASI SE COMPORTAN EN TAMAÑO GRANDE
+    @include desdenotebook{
+        @include grilla-base(1fr 1fr, 0px);
         article{
-            &:first-child, &:nth-child(3){grid-row: span 2;}
-            &:nth-child(5){
-                grid-column: span 2;
-                h2{font-size: $base-font-size * 3;}
-            }
             .img-wrapper{@include img-aux(300px);}
-            &:first-child, &:nth-child(3){& .img-wrapper{height: 600px;}}
+            &:first-child, 
+            &:nth-child(3){
+                grid-row:              span 2;
+                & .img-wrapper{height: 600px;}
+            }
+            &:nth-child(5){
+                grid-column:           span 2;
+                h2{font-size:          $base-font-size * 3;}
+            }
         }
     }
-    @include hastanotebook{// COMPORTAMIENTO TABLET
+    // COMPORTAMIENTO TABLET
+    @include hastanotebook{
         @include grilla-base(1fr 1fr, 0px);
         article:nth-child(5){grid-column: span 2;}
-        & article .img-wrapper{@include img-aux(250px);}
+        article .img-wrapper{@include img-aux(250px);}
     }
 }
 
-    ////////STOCK
-
+//////STOCK
 .gridstock{
-    @include desdenotebook{// ASI SE COMPORTAN EN TAMAÑO GRANDE
+    // ASI SE COMPORTAN EN TAMAÑO GRANDE
+    @include desdenotebook{
         @include grilla-base (1fr 1fr, 2px);
-            article{.img-wrapper{@include img-aux(300px);}}
+        article{.img-wrapper{@include img-aux(300px);}}
     }
-    @include hastanotebook{// COMPORTAMIENTO TABLET
+    // COMPORTAMIENTO TABLET
+    @include hastanotebook{
         @include grilla-base (1fr 1fr, 2px);
-            article{.img-wrapper{@include img-aux(250px);}}
+        article{.img-wrapper{@include img-aux(250px);}}
     }
 }
-    ///////MODELOS
 
-.grid-modelos{ 
-    article .img-wrapper{//ANIMACIONES EN LAS FOTOS
-        overflow: hidden;
-        & > *{transition: all 500ms;}
+///////MODELOS
+.grid-modelos{
+    //ANIMACIONES EN LAS FOTOS 
+    article .img-wrapper{
+        overflow:          hidden;
+        & > *{transition:  all 500ms;}
         &:hover{
             img{
-                filter: brightness(1.5);
-                filter: contrast(0.5);
+                filter:    brightness(1.5);
+                filter:    contrast(0.5);
                 transform: scale(1.1);     
             }
             .box-title{transform: scale(1.1);}
         }
     }
-    @include desdenotebook{// ASI SE COMPORTAN EN TAMAÑO GRANDE
+    // ASI SE COMPORTAN EN TAMAÑO GRANDE
+    @include desdenotebook{
         @include grilla-base(1fr 1fr 1fr, 2px);
         grid-template-rows: repeat(2, 300px) 350px 300px;
         article{
-            &:first-child, &:nth-child(7){grid-column: span 2;}
-            &:nth-child(2){grid-row: span 2;}
+            .img-wrapper{@include img-aux(300px);}    
+            &:first-child, &:nth-child(7){
+                grid-column: span 2;
+            }
+            &:nth-child(2){
+                grid-row:    span 2;
+                .img-wrapper{height: 600px;}
+            }
             &:nth-child(5){
                 grid-column: span 3;
+                .img-wrapper{height: 350px;}
                 h2{font-size: 3rem;}
             }
-            &:nth-child(2){ .img-wrapper{height: 600px;}}
-            &:nth-child(5){ .img-wrapper{height: 350px;}}
-            .img-wrapper{@include img-aux(300px);}    
         }
     }
-    @include hastanotebook{// COMPORTAMIENTO TABLET
+    // COMPORTAMIENTO TABLET
+    @include hastanotebook{
         @include grilla-base(1fr 1fr, 2px);
-        article{  //CAMBIO DE UBICACION EN GRILLA DE MODELOS
-            &:nth-child(1){order: 4; grid-column: span 1;}            
-            &:nth-child(2){order: 1;grid-row: span 2;
-                .img-wrapper{height: 500px;}}
-            &:nth-child(3){order: 2;}
-            &:nth-child(4){order: 7;}
-            &:nth-child(5){order: 5;grid-column: span 2;}
-            &:nth-child(6){order: 6;}
-            &:nth-child(7){order: 3;grid-row: span 2;
-                .img-wrapper{height: 500px;}}
+        article{  
             .img-wrapper{@include img-aux(250px);}
+            //CAMBIO DE UBICACION EN GRILLA DE MODELOS
+            &:nth-child(1)  {order:  4; grid-column: span 1;}            
+            &:nth-child(2)  {order:  1; grid-row:    span 2;
+                .img-wrapper{height: 500px;}}
+            &:nth-child(3)  {order:  2;}
+            &:nth-child(4)  {order:  7;}
+            &:nth-child(5)  {order:  5; grid-column: span 2;}
+            &:nth-child(6)  {order:  6;}
+            &:nth-child(7)  {order:  3; grid-row:    span 2;
+                .img-wrapper{height: 500px;}}
         }
     }
-    @include hastatablet{//comportamiento mediano/chico
+  // COMPORTAMIENTO MEDIANO CHICO
+    @include hastatablet{
         @include grilla-to-flex;
-            article{
-                //tuve que rearmar selectores para pisar los de tamañ desde tablet
-                &:nth-child(2), &:nth-child(7){
-                    & .img-wrapper{height: 300px}
-                }
-            } 
+        article{//tuve que rearmar selectores para pisar los de tamañ desde tablet
+            &:nth-child(2), &:nth-child(7){
+                & .img-wrapper{height: 300px}
+            }
+        } 
     }
 }
 
 //COMPORTAMIENTO MEDIANO - CHICO PARA LAS GRILLAS SERVICIOS Y STOCK - SE TRANSFORMAN EN FLEX
 @include hastatablet{
-    .grid-servicios, .gridstock{
-        @include grilla-to-flex;
-    }
+    .grid-servicios, .gridstock{@include grilla-to-flex;}
 }
 
 
 //ACOMODANDO LAS FOTOS Y LOS TITULOS DE LAS FOTOS
 .grid-servicios, .grid-modelos, .gridstock{
     & article{
-        display:flex;
+        .img-wrapper img{ @extend .img-specs;}
+        display:        flex;
         flex-direction: column;
-        & .box-title{
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        .box-title{
             @extend .centrador;
+            display:         flex;
+            align-items:     center;
+            justify-content: center;
+            h2{
+                @extend .titulos-grandes;
+                color:            $primary;
+                text-shadow:      2px 2px 2px $dark;
+                background-color: rgba($dark, 0.25);
+            }
         }
-        & .img-wrapper img{ @extend .img-specs;}
-    }
-    & h2{
-        color: $primary;
-        @extend .titulos-grandes;
-        text-shadow: 2px 2px 2px $dark;
-        background-color: rgba($dark, 0.25);
     }
 }
 
@@ -377,46 +394,46 @@ height: 500px;
         @include form-base(column, 100%);
     }
     .boton{
-        background-color: $secondary;
-        color: $all-bg;
-        border: none;
         @extend .titulos-grandes;
-        font-size: $base-font-size * 1.2;
-        letter-spacing: 1px;
-        padding: 5px 10px;
+        background-color: $secondary;
+        color:            $all-bg;
+        border:           none;
+        font-size:        $base-font-size * 1.2;
+        letter-spacing:   1px;
+        padding:          5px 10px;
         &:hover{
-            transform: scale(1.15);
+            transform:        scale(1.15);
             background-color: $primary;
         }
     }
     .formulario-texto{font-size: $base-font-size * 1.2;}
-    form .form-input {height: 40px;}
+    form .form-input {height:    40px;}
 }
 
 /////FOOTER
 
 footer{
     background-color: $dark;
-    position: absolute;
-    bottom: 0;
+    position:         absolute;
+    bottom:           0;
     p, h3{
-        color: $primary;
+        color:     $primary;
         font-size: 1rem;
     }
     .logos{
         a{text-decoration: none;}
         .insta,.face,.yt{
-            font-size: 1.8rem;
+            font-size:      1.8rem;
             letter-spacing: 7px;
             &:hover{
                 text-decoration: none;
-                transform: scale(1.2);
+                transform:       scale(1.2);
                 text-decoration: none;
             }
         }
     }
     span{
-        color: red;
+        color:       red;
         font-weight: bold;
     }
 }

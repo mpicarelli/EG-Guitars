@@ -35,31 +35,32 @@ $sizes: (90: 90%, 70: 70%);
 //FUENTES
 h1, h2, h3, h4, a, nav span {font-family: "OSWALD", sans-serif;}
 p                           {font-family: "roboto", sans-serif;}
+
 $base-font-size: 1rem;
 
 // EXTENDS
 .titulos-grandes{
-    font-weight: bold;
+    font-weight:    bold;
     letter-spacing: 3px;
-    font-size: $base-font-size * 2;
+    font-size:      $base-font-size * 2;
     text-transform: uppercase;
 }
 
 .centrador{
     position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    top: 0;
+    bottom:   0;
+    left:     0;
+    right:    0;
+    top:      0;
 }
 
 .link-en-texto{
     font-family: "roboto", sans-serif;
-    font-size: $base-font-size * 1.2;
+    font-size:   $base-font-size * 1.2;
     font-weight: bold;
-    font-style: italic;
+    font-style:  italic;
     &:hover{
-        color: $primary;
+        color:     $primary;
         transform: scale(1.1);
     }
 }
@@ -68,49 +69,54 @@ $base-font-size: 1rem;
 
 .img-specs{
     object-fit: cover;
-    width: 100%;
-    height: 100%;
+    width:      100%;
+    height:     100%;
 }
 
 .form-grande{
     background-color: $dark;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
+    display:          flex;
+    flex-wrap:        wrap;
+    align-items:      center;
     & > *{width: 50%;}
 }
 
 //MIXIN FORMULARIO
 @mixin form-base ($direction, $ancho){
-    display: flex;
-    flex-wrap: wrap;
+    display:          flex;
+    flex-wrap:        wrap;
     background-color: $dark;
-    flex-direction: $direction;
-    align-items: center;
+    flex-direction:   $direction;
+    align-items:      center;
     & > *{width: $ancho;};
 }
 
 //MIXIN FOTOS GRILLAS
 @mixin img-aux ($alto-foto){
     position: relative;
-    display: block;
-    height:$alto-foto;
+    display:  block;
+    height:   $alto-foto;
 }
 
 //MIXIN PASO DE GRILLA A FLEX PARA TAMAÑOS MAS CHICOS
 @mixin grilla-to-flex{
-    display: flex;
+    display:        flex;
     flex-direction: column;
-    & article {.img-wrapper{@include img-aux(300px);}}
+    & article {
+        .img-wrapper{
+            @include img-aux(300px);
+        }
+    }
 }
 
 //MIXIN PARA LAS GRILLAS
 @mixin grilla-base ($num-col, $gap) {
-    display: grid;
+    display:               grid;
     grid-template-columns: $num-col;
-    grid-auto-flow: dense;
-    gap: $gap
+    grid-auto-flow:        dense;
+    gap:                   $gap
 }
+
 //ARCHIVOS IMPORTADOS
 @import "bootstrap/bootstrap.scss";
 @import "estilos-mp.scss";
