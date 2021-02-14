@@ -4,7 +4,7 @@ $texto-gris:           rgb(196, 196, 196);
 $dark:                 rgb(27, 27, 27);
 $all-bg:               rgb(59, 59, 59);
 
-$colors:(
+$colors:(//MERGE CON BS
 "texto-blanco":          $texto-blanco,
 "texto-gris":            $texto-gris,
 "dark":                  $dark,
@@ -55,7 +55,6 @@ $base-font-size: 1rem;
 .link-en-texto{
     font-family: "roboto", sans-serif;
     font-size: $base-font-size * 1.2;
-    text-decoration: none;
     font-weight: bold;
     font-style: italic;
     &:hover{
@@ -72,6 +71,29 @@ $base-font-size: 1rem;
     height: 100%;
 }
 
+.form-grande{
+    background-color: $dark;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    & > *{width: 50%;}
+}
+
+//MIXIN FORMULARIO
+@mixin form-base ($direction, $ancho){
+    display: flex;
+    flex-wrap: wrap;
+    background-color: $dark;
+    flex-direction: $direction;
+    align-items: center;
+    & > *{width: $ancho;};
+}
+
+@mixin img-aux ($alto-foto){
+    position: relative;
+    display: block;
+    height:$alto-foto;
+}
 //ARCHIVOS IMPORTADOS
 @import "bootstrap/bootstrap.scss";
 @import "estilos-mp.scss";

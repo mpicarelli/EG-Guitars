@@ -16,11 +16,11 @@ body{
         text-decoration: none;
         position: absolute;
         bottom: 125px;
+        right: 20px;
         font-size: $base-font-size * 1.5;
         line-height: $base-font-size * 2;
         padding: 5px 10px 10px 10px;
-        background-color: rgba($all-bg, 0.75);
-        margin-left: 20px;
+        background-color: rgba($secondary, 0.25);
         border-radius: 15%;
         &:hover{opacity: 1;
                 background-color: $dark
@@ -306,8 +306,8 @@ height: 500px;
 
     ///////MODELOS
 
-.grid-showroom{ //ANIMACIONES EN LAS FOTOS
-    article .img-wrapper{
+.grid-modelos{ 
+    article .img-wrapper{//ANIMACIONES EN LAS FOTOS
         overflow: hidden;
         & > *{transition: all 500ms;}
         &:hover{
@@ -353,8 +353,7 @@ height: 500px;
                 .img-wrapper{height: 500px;}}
             &:nth-child(3){order: 2;}
             &:nth-child(4){order: 7;}
-            &:nth-child(5){order: 5;grid-column: span 2;
-                .img-wrapper{height: 300px;}}
+            &:nth-child(5){order: 5;grid-column: span 2;}
             &:nth-child(6){order: 6;}
             &:nth-child(7){order: 3;grid-row: span 2;
                 .img-wrapper{height: 500px;}}
@@ -365,7 +364,7 @@ height: 500px;
             }
         }
     }
-    @include hastatablet{
+    @include hastatablet{//comportamiento mediano/chico
         display: flex;
         flex-direction: column;
         & article {
@@ -382,7 +381,7 @@ height: 500px;
     }
 }
 
-//COMPORTAMIENTO MEDIANO - CHICO PARA LAS 3 GRILLAS
+//COMPORTAMIENTO MEDIANO - CHICO PARA LAS servicios y stock GRILLAS
 @include hastatablet{
     //TODOS PASAN A SER FLEX COLUMN
     .grid-servicios, .gridstock{
@@ -401,30 +400,23 @@ height: 500px;
 
 
 //ACOMODANDO LAS FOTOS Y LOS TITULOS DE LAS FOTOS
-.grid-servicios, .grid-showroom, .gridstock{
+.grid-servicios, .grid-modelos, .gridstock{
     & h2{
-        color: rgb(228, 228, 228);
-        text-transform: uppercase;
-        font-weight: 700;
-        font-size: 2rem;
+        color: $primary;
+        @extend .titulos-grandes;
         text-shadow: 2px 1px 1px black;
         padding: 0.5rem;
-        background-color: rgba(27, 27, 27, 0.2);
-        border-radius: 10%;
+        background-color: rgba($dark, 0.25);
     }
     & article{
         display:flex;
         flex-direction: column;
         & .box-title{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        top: 0;
-        padding: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+            @extend .centrador;
         }
         & .img-wrapper img{ @extend .img-specs;}
     }
@@ -437,53 +429,33 @@ height: 500px;
 }
 
 //RESALTANDO LOS LINKS
-.grid-servicios article:nth-child(7) a{
-    color:$secondary;
-    font-family: "roboto", sans-serif;
-    font-size: 1.2rem;
-    text-decoration: underline;
-    cursor: pointer;
-    font-weight: bold;
-    &:hover{
-        color:$primary;
-    }
-}
+.grid-servicios article:nth-child(7) a{@extend .link-en-texto;}
 
 
 ////// CONTACTO
 .formulario{
     @include desdetablet{//PARRAFO Y FORMULARIO UNO AL LADO DEL OTRO
-        background-color: rgb(31, 31, 31);
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        & > *{width: 50%;}
+        @include form-base(row, 50%);
     }
     @include hastatablet{ //PARRAFO Y FORMULARIO UNO DEBAJO DEL OTRO
-        background-color: rgb(31, 31, 31);
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        & > *{width: 100%;}
+        @include form-base(column, 100%);
     }
-    .formulario-texto{font-size: 1.3rem;}
-    form .form-input{height: 40px;}
     .boton{
-        background-color: rgb(207, 207, 207);
-        color: rgb(71, 71, 71);
+        background-color: $secondary;
+        color: $all-bg;
         border: none;
-        font-family: "oswald",sans-serif;
-        font-size: 1.2rem;
-        font-weight: bold;
+        @extend .titulos-grandes;
+        font-size: $base-font-size * 1.2;
         letter-spacing: 1px;
         text-transform: uppercase;
-        padding: 5px 15px;
-        cursor: pointer;
+        padding: 5px 10px;
         &:hover{
             transform: scale(1.15);
-            background-color: ivory;
+            background-color: $primary;
         }
     }
+    .formulario-texto{font-size: $base-font-size * 1.2;}
+    form .form-input {height: 40px;}
 }
 
 /////FOOTER
