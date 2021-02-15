@@ -5,7 +5,7 @@
 ***
 Desarrollado para Emanuel Gianne y su marca **EG-GUITAR**
 
-![Logo EG-GUITARS](/imagenes/logoGris.png)
+![Logo EG-GUITARS](imagenes/LogoGris.png)
 
 ### **RESUMEN DEL PROYECTO**
 
