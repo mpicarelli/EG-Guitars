@@ -437,3 +437,24 @@ footer{
         font-weight: bold;
     }
 }
+
+////////ESTILOS 404
+
+.todofondo-404{
+    background-color: rgba($all-bg, 0.5);
+    min-height:       88vh;
+    .jumbotron{
+        max-width: 700px;
+        margin: auto;
+        ul {
+            color: $primary;
+            font-size: $base-font-size * 1.2;
+            li a{
+            font-size: $base-font-size * 1.2;
+            text-transform: uppercase;
+            font-style: italic;
+
+            }
+        }    
+    }
+}
