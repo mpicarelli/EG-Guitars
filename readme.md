@@ -41,8 +41,8 @@ El sitio cuenta con 6 secciones:
 3. **EG-Pickups** que contiene:
     - Imagen de portada de micrófonos EG.
     - Breve descripción de los micrófonos.
-    - Articulo de proceso de fabricación.
-    - Articulo de bobinado de micrófonos.
+    - Artículo de proceso de fabricación.
+    - Artículo de bobinado de micrófonos.
     - Link final para dirigirse a la sección de contacto.
 
 4. **Modelos** que contiene:
@@ -54,6 +54,9 @@ El sitio cuenta con 6 secciones:
 5. **Stock** que contiene:
     - Grilla con las guitarras actualmente en stock.
     - Link final para dirigirse a la sección de contacto.
+
+6. **Contacto** que contiene:
+    - Formulario de contacto con texto a un lado.
 
 <br>
 
@@ -68,11 +71,6 @@ El sitio cuenta con 6 secciones:
 - Los archivos .html se distribuyeron en carpetas para que se coincidan con la navegación del navbar.
 - Estilo creado con SCSS. 
     - style.scss: archivo general con variables, extend, mixins e importando BS y mi archivo particular.
-    - style-mp.scss: archivo particular de estilos.
+    - style-mp.scss: archivo particular de estilos. Cada bloque de estilos esta separado por comentarios.
 - Se utilizo Bootstrap para el navbar, carouseles, auxiliares, etc.
-
-
-
-
-
-
+- Se creo pagina 404 not found para darle la posibilidad al usuario de volver a cualquier sección sel sitio si sigue un link inexistente.
